@@ -18,8 +18,8 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="500px"
-        width="500px"
+        height="90%"
+        width="90%"
       />,
     },
     "ref": null,
@@ -28,8 +28,8 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "height": "500px",
-        "width": "500px",
+        "height": "90%",
+        "width": "90%",
       },
       "ref": null,
       "rendered": null,
@@ -44,8 +44,8 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="500px"
-          width="500px"
+          height="90%"
+          width="90%"
         />,
       },
       "ref": null,
@@ -54,8 +54,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "height": "500px",
-          "width": "500px",
+          "height": "90%",
+          "width": "90%",
         },
         "ref": null,
         "rendered": null,

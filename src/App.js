@@ -2,19 +2,19 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Stage from './Stage';
+import Rect from './Rect';
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 90vh;
+  height: 98vh;
   justify-content: center;
   align-items: center;
 `;
 
 const App = () => (
   <Wrapper>
-    <Stage width="500px" height="500px" />
+    <Rect width="90%" height="90%" />
   </Wrapper>
 );
 
