@@ -11,13 +11,6 @@ test('should render without crashing', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should have relative position and inline-block display', () => {
-  const wrapper = shallow(<Stage />);
-
-  expect(wrapper).toHaveStyleRule('position', 'relative');
-  expect(wrapper).toHaveStyleRule('display', 'inline-block');
-});
-
 test(`dimensions should default to '${defaultDims}' if they are not provided`, () => {
   const wrapper = shallow(<Stage />);
 
