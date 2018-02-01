@@ -6,6 +6,8 @@ import Rect from './Rect';
 const defaultWidth = '30px';
 const defaultHeight = '250px';
 const defaultBgColor = '#000';
+const defaultX = 0;
+const defaultY = 0;
 
 test('should render without crashing', () => {
   const wrapper = shallow(<Rect />);
@@ -53,4 +55,20 @@ test(`position should be relative if no position is provided`, () => {
 test(`position should be absolute if absolute is provided`, () => {
   const wrapper = shallow(<Rect position="absolute" />);
   expect(wrapper).toHaveStyleRule('position', 'absolute');
+});
+
+test(`coordinates should default to (${defaultX}, ${defaultY}) if not provided`, () => {
+  const wrapper = shallow(<Rect />);
+
+  expect(wrapper).toHaveStyleRule('left', `${defaultX}px`);
+  expect(wrapper).toHaveStyleRule('top', `${defaultY}px`);
+});
+
+test(`coordinates should be equal to the values provided`, () => {
+  const x = 300;
+  const y = 20;
+  const wrapper = shallow(<Rect x={x} y={y} />);
+
+  expect(wrapper).toHaveStyleRule('left', `${x}px`);
+  expect(wrapper).toHaveStyleRule('top', `${y}px`);
 });
