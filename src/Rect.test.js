@@ -12,7 +12,7 @@ test('should render without crashing', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test(`dimensions should default to ${defaultWidth}x${defaultHeight} if they are not provided`, () => {
+test(`dimensions should default to ${defaultWidth} X ${defaultHeight} if they are not provided`, () => {
   const wrapper = shallow(<Rect />);
 
   expect(wrapper).toHaveStyleRule('width', defaultWidth);
@@ -38,4 +38,19 @@ test(`background-color should equal the bgColor provided`, () => {
   const wrapper = shallow(<Rect bgColor={bgColor} />);
 
   expect(wrapper).toHaveStyleRule('background-color', bgColor);
+});
+
+test(`position should be relative if any other than absolute is provided`, () => {
+  const wrapper = shallow(<Rect position="fixed" />);
+  expect(wrapper).toHaveStyleRule('position', 'relative');
+});
+
+test(`position should be relative if no position is provided`, () => {
+  const wrapper = shallow(<Rect />);
+  expect(wrapper).toHaveStyleRule('position', 'relative');
+});
+
+test(`position should be absolute if absolute is provided`, () => {
+  const wrapper = shallow(<Rect position="absolute" />);
+  expect(wrapper).toHaveStyleRule('position', 'absolute');
 });

@@ -8,8 +8,11 @@ const Rect = styled.div`
   background-color: ${({ bgColor = defaultBgColor }) => bgColor};
   width: ${({ width = defaultWidth }) => width};
   height: ${({ height = defaultHeight }) => height};
+  position: ${({ position }) => {
+    if (position === 'absolute') return position;
+    return 'relative';
+  }};
   display: inline-block;
-  position: relative;
 `;
 
 export default Rect;
