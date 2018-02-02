@@ -59,6 +59,10 @@ class App extends Component {
   stageHeight = 1000;
   paddleWidth = 30;
   paddleHeight = this.stageHeight / 2;
+  controls = {
+    '87': false,
+    '83': false
+  };
   render() {
     const { leftPaddle } = this.state;
 

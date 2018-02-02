@@ -46,6 +46,16 @@ test('nothing should happen if any other key is down', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('all game controls should be false on mount', () => {
+  const controls = {
+    '87': false,
+    '83': false
+  };
+  const instControls = shallow(<App />, shallowOptions).instance().controls;
+
+  expect(instControls).toEqual(controls);
+});
+
 test('leftPaddle Y coordinate should stay the same if upper limit is reached', () => {
   const wrapper = shallow(<App />, shallowOptions);
   const instance = wrapper.instance();
