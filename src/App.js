@@ -33,10 +33,10 @@ class App extends Component {
   };
   componentDidMount() {
     focusElement(this.wrapper);
-    this.inputLoopId = setInterval(this.inputLoop, this.loopMs);
+    this.gameLoopId = setInterval(this.gameLoop, this.loopMs);
   }
   componentWillUnmount() {
-    clearInterval(this.inputLoopId);
+    clearInterval(this.gameLoopId);
   }
   onKeyDown = ({ keyCode }) => {
     this.controls[keyCode] = true;
@@ -44,7 +44,7 @@ class App extends Component {
   onKeyUp = ({ keyCode }) => {
     this.controls[keyCode] = false;
   };
-  inputLoop = () => {
+  gameLoop = () => {
     const { controls, speed } = this;
     const { leftPaddle } = this.state;
 

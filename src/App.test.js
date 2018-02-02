@@ -20,7 +20,7 @@ test('left paddle should move up if W is down', () => {
     '83': false
   };
 
-  instance.inputLoop();
+  instance.gameLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(y0 - wrapper.instance().speed);
   expect(wrapper).toMatchSnapshot();
@@ -37,7 +37,7 @@ test('left paddle should move down if S is down', () => {
     '83': true
   };
 
-  instance.inputLoop();
+  instance.gameLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(y0 + wrapper.instance().speed);
   expect(wrapper).toMatchSnapshot();
@@ -87,22 +87,22 @@ test('unknown key downs and ups should be ignored', () => {
 test('input loop should start on mount to run every 75ms', () => {
   const instance = mount(<App />).instance();
 
-  instance.inputLoop = jest.fn();
+  instance.gameLoop = jest.fn();
 
   instance.componentDidMount();
 
-  expect(setInterval).toHaveBeenCalledWith(instance.inputLoop, 75);
+  expect(setInterval).toHaveBeenCalledWith(instance.gameLoop, 75);
   expect(setInterval).toHaveBeenCalledTimes(2);
-  expect(instance.inputLoopId).toBeDefined();
+  expect(instance.gameLoopId).toBeDefined();
 });
 
 test('input loop interval should be cleared on unmount', () => {
   const wrapper = mount(<App />);
-  const { inputLoopId } = wrapper.instance();
+  const { gameLoopId } = wrapper.instance();
 
   wrapper.unmount();
 
-  expect(clearInterval).toHaveBeenCalledWith(inputLoopId);
+  expect(clearInterval).toHaveBeenCalledWith(gameLoopId);
 });
 
 test('input loop should be called every 75ms', () => {
@@ -110,13 +110,13 @@ test('input loop should be called every 75ms', () => {
   const timePassed = 123487;
   const timesCalled = Math.floor(timePassed / 75);
 
-  instance.inputLoop = jest.fn();
+  instance.gameLoop = jest.fn();
 
   instance.componentDidMount();
 
   jest.advanceTimersByTime(timePassed);
 
-  expect(instance.inputLoop).toHaveBeenCalledTimes(timesCalled);
+  expect(instance.gameLoop).toHaveBeenCalledTimes(timesCalled);
 });
 
 test('leftPaddle Y coordinate should stay the same if upper limit is reached', () => {
@@ -134,7 +134,7 @@ test('leftPaddle Y coordinate should stay the same if upper limit is reached', (
 
   wrapper.simulate('keydown', event);
 
-  instance.inputLoop();
+  instance.gameLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(0);
   expect(wrapper).toMatchSnapshot();
@@ -156,7 +156,7 @@ test('leftPaddle Y coordinate should stay the same if lower limit is reached', (
 
   wrapper.simulate('keydown', event);
 
-  instance.inputLoop();
+  instance.gameLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(limit);
   expect(wrapper).toMatchSnapshot();
