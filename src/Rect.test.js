@@ -47,7 +47,7 @@ test(`coordinates should default to (${defaultX}, ${defaultY}) if not provided`,
 
   expect(wrapper).toHaveStyleRule(
     'transform',
-    `translate(${defaultX}px, ${defaultY}px)`
+    `translate(${defaultX}px,${defaultY}px)`
   );
 });
 
@@ -56,5 +56,5 @@ test(`coordinates should be equal to the values provided`, () => {
   const y = 20;
   const wrapper = shallow(<Rect x={x} y={y} />);
 
-  expect(wrapper).toHaveStyleRule('transform', `translate(${x}px, ${y}px)`);
+  expect(wrapper).toHaveStyleRule('transform', `translate(${x}px,${y}px)`);
 });
