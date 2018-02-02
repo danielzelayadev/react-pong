@@ -23,19 +23,19 @@ ShallowWrapper {
       >
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="left-paddle"
           width={30}
           x={100}
-          y={250}
+          y={375}
         />
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="right-paddle"
           width={30}
           x={1340}
-          y={250}
+          y={375}
         />
       </styled.div>,
       "innerRef": [Function],
@@ -52,19 +52,19 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />,
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />,
         ],
         "height": 1000,
@@ -78,11 +78,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "left-paddle",
             "width": 30,
             "x": 100,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -94,11 +94,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "right-paddle",
             "width": 30,
             "x": 1340,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -121,19 +121,19 @@ ShallowWrapper {
         >
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />
         </styled.div>,
         "innerRef": [Function],
@@ -150,19 +150,19 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="left-paddle"
               width={30}
               x={100}
-              y={250}
+              y={375}
             />,
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="right-paddle"
               width={30}
               x={1340}
-              y={250}
+              y={375}
             />,
           ],
           "height": 1000,
@@ -176,11 +176,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "left-paddle",
               "width": 30,
               "x": 100,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -192,11 +192,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "right-paddle",
               "width": 30,
               "x": 1340,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -242,19 +242,19 @@ ShallowWrapper {
       >
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="left-paddle"
           width={30}
           x={100}
-          y={250}
+          y={375}
         />
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="right-paddle"
           width={30}
           x={1340}
-          y={250}
+          y={375}
         />
       </styled.div>,
       "innerRef": [Function],
@@ -271,19 +271,19 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />,
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />,
         ],
         "height": 1000,
@@ -297,11 +297,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "left-paddle",
             "width": 30,
             "x": 100,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -313,11 +313,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "right-paddle",
             "width": 30,
             "x": 1340,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -340,19 +340,19 @@ ShallowWrapper {
         >
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />
         </styled.div>,
         "innerRef": [Function],
@@ -369,19 +369,19 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="left-paddle"
               width={30}
               x={100}
-              y={250}
+              y={375}
             />,
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="right-paddle"
               width={30}
               x={1340}
-              y={250}
+              y={375}
             />,
           ],
           "height": 1000,
@@ -395,11 +395,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "left-paddle",
               "width": 30,
               "x": 100,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -411,11 +411,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "right-paddle",
               "width": 30,
               "x": 1340,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -461,19 +461,19 @@ ShallowWrapper {
       >
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="left-paddle"
           width={30}
           x={100}
-          y={500}
+          y={750}
         />
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="right-paddle"
           width={30}
           x={1340}
-          y={250}
+          y={375}
         />
       </styled.div>,
       "innerRef": [Function],
@@ -490,19 +490,19 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={500}
+            y={750}
           />,
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />,
         ],
         "height": 1000,
@@ -516,11 +516,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "left-paddle",
             "width": 30,
             "x": 100,
-            "y": 500,
+            "y": 750,
           },
           "ref": null,
           "rendered": null,
@@ -532,11 +532,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "right-paddle",
             "width": 30,
             "x": 1340,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -559,19 +559,19 @@ ShallowWrapper {
         >
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={500}
+            y={750}
           />
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />
         </styled.div>,
         "innerRef": [Function],
@@ -588,19 +588,19 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="left-paddle"
               width={30}
               x={100}
-              y={500}
+              y={750}
             />,
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="right-paddle"
               width={30}
               x={1340}
-              y={250}
+              y={375}
             />,
           ],
           "height": 1000,
@@ -614,11 +614,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "left-paddle",
               "width": 30,
               "x": 100,
-              "y": 500,
+              "y": 750,
             },
             "ref": null,
             "rendered": null,
@@ -630,11 +630,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "right-paddle",
               "width": 30,
               "x": 1340,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -680,7 +680,7 @@ ShallowWrapper {
       >
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="left-paddle"
           width={30}
           x={100}
@@ -688,11 +688,11 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="right-paddle"
           width={30}
           x={1340}
-          y={250}
+          y={375}
         />
       </styled.div>,
       "innerRef": [Function],
@@ -709,7 +709,7 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
@@ -717,11 +717,11 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />,
         ],
         "height": 1000,
@@ -735,7 +735,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "left-paddle",
             "width": 30,
             "x": 100,
@@ -751,11 +751,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "right-paddle",
             "width": 30,
             "x": 1340,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -778,7 +778,7 @@ ShallowWrapper {
         >
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
@@ -786,11 +786,11 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />
         </styled.div>,
         "innerRef": [Function],
@@ -807,7 +807,7 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="left-paddle"
               width={30}
               x={100}
@@ -815,11 +815,11 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="right-paddle"
               width={30}
               x={1340}
-              y={250}
+              y={375}
             />,
           ],
           "height": 1000,
@@ -833,7 +833,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "left-paddle",
               "width": 30,
               "x": 100,
@@ -849,11 +849,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "right-paddle",
               "width": 30,
               "x": 1340,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -899,19 +899,19 @@ ShallowWrapper {
       >
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="left-paddle"
           width={30}
           x={100}
-          y={250}
+          y={375}
         />
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="right-paddle"
           width={30}
           x={1340}
-          y={250}
+          y={375}
         />
       </styled.div>,
       "innerRef": [Function],
@@ -928,19 +928,19 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />,
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />,
         ],
         "height": 1000,
@@ -954,11 +954,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "left-paddle",
             "width": 30,
             "x": 100,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -970,11 +970,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "right-paddle",
             "width": 30,
             "x": 1340,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -997,19 +997,19 @@ ShallowWrapper {
         >
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />
         </styled.div>,
         "innerRef": [Function],
@@ -1026,19 +1026,19 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="left-paddle"
               width={30}
               x={100}
-              y={250}
+              y={375}
             />,
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="right-paddle"
               width={30}
               x={1340}
-              y={250}
+              y={375}
             />,
           ],
           "height": 1000,
@@ -1052,11 +1052,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "left-paddle",
               "width": 30,
               "x": 100,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -1068,11 +1068,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "right-paddle",
               "width": 30,
               "x": 1340,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -1118,19 +1118,19 @@ ShallowWrapper {
       >
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="left-paddle"
           width={30}
           x={100}
-          y={250}
+          y={375}
         />
         <styled.div
           color="#fff"
-          height={500}
+          height={250}
           id="right-paddle"
           width={30}
           x={1340}
-          y={250}
+          y={375}
         />
       </styled.div>,
       "innerRef": [Function],
@@ -1147,19 +1147,19 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />,
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />,
         ],
         "height": 1000,
@@ -1173,11 +1173,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "left-paddle",
             "width": 30,
             "x": 100,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -1189,11 +1189,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "color": "#fff",
-            "height": 500,
+            "height": 250,
             "id": "right-paddle",
             "width": 30,
             "x": 1340,
-            "y": 250,
+            "y": 375,
           },
           "ref": null,
           "rendered": null,
@@ -1216,19 +1216,19 @@ ShallowWrapper {
         >
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="left-paddle"
             width={30}
             x={100}
-            y={250}
+            y={375}
           />
           <styled.div
             color="#fff"
-            height={500}
+            height={250}
             id="right-paddle"
             width={30}
             x={1340}
-            y={250}
+            y={375}
           />
         </styled.div>,
         "innerRef": [Function],
@@ -1245,19 +1245,19 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="left-paddle"
               width={30}
               x={100}
-              y={250}
+              y={375}
             />,
             <styled.div
               color="#fff"
-              height={500}
+              height={250}
               id="right-paddle"
               width={30}
               x={1340}
-              y={250}
+              y={375}
             />,
           ],
           "height": 1000,
@@ -1271,11 +1271,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "left-paddle",
               "width": 30,
               "x": 100,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,
@@ -1287,11 +1287,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "color": "#fff",
-              "height": 500,
+              "height": 250,
               "id": "right-paddle",
               "width": 30,
               "x": 1340,
-              "y": 250,
+              "y": 375,
             },
             "ref": null,
             "rendered": null,

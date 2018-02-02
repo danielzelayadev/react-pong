@@ -144,7 +144,7 @@ test('leftPaddle Y coordinate should stay the same if lower limit is reached', (
   const wrapper = shallow(<App />, shallowOptions);
   const instance = wrapper.instance();
   const event = { keyCode: 83 };
-  const limit = instance.stageHeight - instance.stageHeight / 2;
+  const limit = instance.stageHeight - instance.paddleHeight;
 
   instance.setState({
     ...instance.state,

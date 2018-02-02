@@ -16,11 +16,11 @@ class App extends Component {
   state = {
     leftPaddle: {
       x: 100,
-      y: 250
+      y: 375
     },
     rightPaddle: {
       x: 1340,
-      y: 250
+      y: 375
     }
   };
   componentDidMount() {
@@ -56,11 +56,11 @@ class App extends Component {
   didHitLowerLimit(pos) {
     return pos + this.paddleHeight > this.stageHeight - this.speed;
   }
-  speed = 50;
+  speed = 75;
   stageWidth = 1500;
   stageHeight = 1000;
   paddleWidth = 30;
-  paddleHeight = this.stageHeight / 2;
+  paddleHeight = 250;
   controls = {
     '87': false,
     '83': false
