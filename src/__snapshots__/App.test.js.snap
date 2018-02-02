@@ -18,14 +18,14 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="1000px"
-        width="1500px"
+        height={1000}
+        width={1500}
       >
         <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={350}
         />
@@ -40,15 +40,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={350}
         />,
-        "height": "1000px",
-        "width": "1500px",
+        "height": 1000,
+        "width": 1500,
       },
       "ref": null,
       "rendered": Object {
@@ -56,10 +56,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bgColor": "#fff",
-          "height": "50%",
+          "color": "#fff",
+          "height": 500,
           "id": "left-paddle",
-          "width": "30px",
+          "width": 30,
           "x": 100,
           "y": 350,
         },
@@ -78,14 +78,14 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="1000px"
-          width="1500px"
+          height={1000}
+          width={1500}
         >
           <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={350}
           />
@@ -100,15 +100,15 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={350}
           />,
-          "height": "1000px",
-          "width": "1500px",
+          "height": 1000,
+          "width": 1500,
         },
         "ref": null,
         "rendered": Object {
@@ -116,10 +116,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bgColor": "#fff",
-            "height": "50%",
+            "color": "#fff",
+            "height": 500,
             "id": "left-paddle",
-            "width": "30px",
+            "width": 30,
             "x": 100,
             "y": 350,
           },
@@ -160,14 +160,14 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="1000px"
-        width="1500px"
+        height={1000}
+        width={1500}
       >
         <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={250}
         />
@@ -182,15 +182,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={250}
         />,
-        "height": "1000px",
-        "width": "1500px",
+        "height": 1000,
+        "width": 1500,
       },
       "ref": null,
       "rendered": Object {
@@ -198,10 +198,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bgColor": "#fff",
-          "height": "50%",
+          "color": "#fff",
+          "height": 500,
           "id": "left-paddle",
-          "width": "30px",
+          "width": 30,
           "x": 100,
           "y": 250,
         },
@@ -220,14 +220,14 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="1000px"
-          width="1500px"
+          height={1000}
+          width={1500}
         >
           <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={250}
           />
@@ -242,15 +242,15 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={250}
           />,
-          "height": "1000px",
-          "width": "1500px",
+          "height": 1000,
+          "width": 1500,
         },
         "ref": null,
         "rendered": Object {
@@ -258,10 +258,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bgColor": "#fff",
-            "height": "50%",
+            "color": "#fff",
+            "height": 500,
             "id": "left-paddle",
-            "width": "30px",
+            "width": 30,
             "x": 100,
             "y": 250,
           },
@@ -302,14 +302,14 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="1000px"
-        width="1500px"
+        height={1000}
+        width={1500}
       >
         <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={500}
         />
@@ -324,15 +324,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={500}
         />,
-        "height": "1000px",
-        "width": "1500px",
+        "height": 1000,
+        "width": 1500,
       },
       "ref": null,
       "rendered": Object {
@@ -340,10 +340,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bgColor": "#fff",
-          "height": "50%",
+          "color": "#fff",
+          "height": 500,
           "id": "left-paddle",
-          "width": "30px",
+          "width": 30,
           "x": 100,
           "y": 500,
         },
@@ -362,14 +362,14 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="1000px"
-          width="1500px"
+          height={1000}
+          width={1500}
         >
           <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={500}
           />
@@ -384,15 +384,15 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={500}
           />,
-          "height": "1000px",
-          "width": "1500px",
+          "height": 1000,
+          "width": 1500,
         },
         "ref": null,
         "rendered": Object {
@@ -400,10 +400,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bgColor": "#fff",
-            "height": "50%",
+            "color": "#fff",
+            "height": 500,
             "id": "left-paddle",
-            "width": "30px",
+            "width": 30,
             "x": 100,
             "y": 500,
           },
@@ -444,14 +444,14 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="1000px"
-        width="1500px"
+        height={1000}
+        width={1500}
       >
         <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={0}
         />
@@ -466,15 +466,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={0}
         />,
-        "height": "1000px",
-        "width": "1500px",
+        "height": 1000,
+        "width": 1500,
       },
       "ref": null,
       "rendered": Object {
@@ -482,10 +482,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bgColor": "#fff",
-          "height": "50%",
+          "color": "#fff",
+          "height": 500,
           "id": "left-paddle",
-          "width": "30px",
+          "width": 30,
           "x": 100,
           "y": 0,
         },
@@ -504,14 +504,14 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="1000px"
-          width="1500px"
+          height={1000}
+          width={1500}
         >
           <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={0}
           />
@@ -526,15 +526,15 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={0}
           />,
-          "height": "1000px",
-          "width": "1500px",
+          "height": 1000,
+          "width": 1500,
         },
         "ref": null,
         "rendered": Object {
@@ -542,10 +542,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bgColor": "#fff",
-            "height": "50%",
+            "color": "#fff",
+            "height": 500,
             "id": "left-paddle",
-            "width": "30px",
+            "width": 30,
             "x": 100,
             "y": 0,
           },
@@ -586,14 +586,14 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="1000px"
-        width="1500px"
+        height={1000}
+        width={1500}
       >
         <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={300}
         />
@@ -608,15 +608,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={300}
         />,
-        "height": "1000px",
-        "width": "1500px",
+        "height": 1000,
+        "width": 1500,
       },
       "ref": null,
       "rendered": Object {
@@ -624,10 +624,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bgColor": "#fff",
-          "height": "50%",
+          "color": "#fff",
+          "height": 500,
           "id": "left-paddle",
-          "width": "30px",
+          "width": 30,
           "x": 100,
           "y": 300,
         },
@@ -646,14 +646,14 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="1000px"
-          width="1500px"
+          height={1000}
+          width={1500}
         >
           <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={300}
           />
@@ -668,15 +668,15 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={300}
           />,
-          "height": "1000px",
-          "width": "1500px",
+          "height": 1000,
+          "width": 1500,
         },
         "ref": null,
         "rendered": Object {
@@ -684,10 +684,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bgColor": "#fff",
-            "height": "50%",
+            "color": "#fff",
+            "height": 500,
             "id": "left-paddle",
-            "width": "30px",
+            "width": 30,
             "x": 100,
             "y": 300,
           },
@@ -728,14 +728,14 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <styled.div
-        height="1000px"
-        width="1500px"
+        height={1000}
+        width={1500}
       >
         <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={300}
         />
@@ -750,15 +750,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          bgColor="#fff"
-          height="50%"
+          color="#fff"
+          height={500}
           id="left-paddle"
-          width="30px"
+          width={30}
           x={100}
           y={300}
         />,
-        "height": "1000px",
-        "width": "1500px",
+        "height": 1000,
+        "width": 1500,
       },
       "ref": null,
       "rendered": Object {
@@ -766,10 +766,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "bgColor": "#fff",
-          "height": "50%",
+          "color": "#fff",
+          "height": 500,
           "id": "left-paddle",
-          "width": "30px",
+          "width": 30,
           "x": 100,
           "y": 300,
         },
@@ -788,14 +788,14 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <styled.div
-          height="1000px"
-          width="1500px"
+          height={1000}
+          width={1500}
         >
           <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={300}
           />
@@ -810,15 +810,15 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div
-            bgColor="#fff"
-            height="50%"
+            color="#fff"
+            height={500}
             id="left-paddle"
-            width="30px"
+            width={30}
             x={100}
             y={300}
           />,
-          "height": "1000px",
-          "width": "1500px",
+          "height": 1000,
+          "width": 1500,
         },
         "ref": null,
         "rendered": Object {
@@ -826,10 +826,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "bgColor": "#fff",
-            "height": "50%",
+            "color": "#fff",
+            "height": 500,
             "id": "left-paddle",
-            "width": "30px",
+            "width": 30,
             "x": 100,
             "y": 300,
           },

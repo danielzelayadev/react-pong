@@ -48,22 +48,24 @@ class App extends Component {
     return pos < this.speed;
   }
   didHitLowerLimit(pos) {
-    return pos + this.stageHeight / 2 > this.stageHeight - this.speed;
+    return pos + this.paddleHeight > this.stageHeight - this.speed;
   }
   speed = 50;
   stageWidth = 1500;
   stageHeight = 1000;
+  paddleWidth = 30;
+  paddleHeight = this.stageHeight / 2;
   render() {
     const { leftPaddle } = this.state;
 
     return (
       <Wrapper onKeyDown={this.onKeyDown} tabIndex="0">
-        <Rect width={`${this.stageWidth}px`} height={`${this.stageHeight}px`}>
+        <Rect width={this.stageWidth} height={this.stageHeight}>
           <Rect
             id="left-paddle"
-            width="30px"
-            height="50%"
-            bgColor="#fff"
+            width={this.paddleWidth}
+            height={this.paddleHeight}
+            color="#fff"
             {...leftPaddle}
           />
         </Rect>

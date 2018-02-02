@@ -3,9 +3,9 @@ import { shallow } from 'enzyme';
 import 'jest-styled-components';
 import Rect from './Rect';
 
-const defaultWidth = '30px';
-const defaultHeight = '250px';
-const defaultBgColor = '#000';
+const defaultWidth = 30;
+const defaultHeight = 250;
+const defaultColor = '#000';
 const defaultX = 0;
 const defaultY = 0;
 
@@ -14,32 +14,32 @@ test('should render without crashing', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test(`dimensions should default to ${defaultWidth} X ${defaultHeight} if they are not provided`, () => {
+test(`dimensions should default to ${defaultWidth}x${defaultHeight} if they are not provided`, () => {
   const wrapper = shallow(<Rect />);
 
-  expect(wrapper).toHaveStyleRule('width', defaultWidth);
-  expect(wrapper).toHaveStyleRule('height', defaultHeight);
+  expect(wrapper).toHaveStyleRule('width', `${defaultWidth}px`);
+  expect(wrapper).toHaveStyleRule('height', `${defaultHeight}px`);
 });
 
 test(`dimensions should equal the dimensions provided`, () => {
-  const width = '300px';
-  const height = '100px';
+  const width = 300;
+  const height = 100;
   const wrapper = shallow(<Rect width={width} height={height} />);
 
-  expect(wrapper).toHaveStyleRule('width', width);
-  expect(wrapper).toHaveStyleRule('height', height);
+  expect(wrapper).toHaveStyleRule('width', `${width}px`);
+  expect(wrapper).toHaveStyleRule('height', `${height}px`);
 });
 
-test(`background-color should default to ${defaultBgColor} if not provided`, () => {
+test(`background-color should default to ${defaultColor} if not provided`, () => {
   const wrapper = shallow(<Rect />);
-  expect(wrapper).toHaveStyleRule('background-color', defaultBgColor);
+  expect(wrapper).toHaveStyleRule('background-color', defaultColor);
 });
 
-test(`background-color should equal the bgColor provided`, () => {
-  const bgColor = '#fff';
-  const wrapper = shallow(<Rect bgColor={bgColor} />);
+test(`background-color should equal the color provided`, () => {
+  const color = '#fff';
+  const wrapper = shallow(<Rect color={color} />);
 
-  expect(wrapper).toHaveStyleRule('background-color', bgColor);
+  expect(wrapper).toHaveStyleRule('background-color', color);
 });
 
 test(`coordinates should default to (${defaultX}, ${defaultY}) if not provided`, () => {
