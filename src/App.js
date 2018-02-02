@@ -16,7 +16,11 @@ class App extends Component {
   state = {
     leftPaddle: {
       x: 100,
-      y: 300
+      y: 250
+    },
+    rightPaddle: {
+      x: 1340,
+      y: 250
     }
   };
   componentDidMount() {
@@ -63,7 +67,7 @@ class App extends Component {
   };
   loopMs = 75;
   render() {
-    const { leftPaddle } = this.state;
+    const { leftPaddle, rightPaddle } = this.state;
 
     return (
       <Wrapper
@@ -81,6 +85,13 @@ class App extends Component {
             height={this.paddleHeight}
             color="#fff"
             {...leftPaddle}
+          />
+          <Rect
+            id="right-paddle"
+            width={this.paddleWidth}
+            height={this.paddleHeight}
+            color="#fff"
+            {...rightPaddle}
           />
         </Rect>
       </Wrapper>
