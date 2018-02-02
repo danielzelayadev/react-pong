@@ -21,45 +21,31 @@ class App extends Component {
   };
   componentDidMount() {
     focusElement(this.wrapper);
-    this.inputLoopId = setInterval(this.inputLoop, 10);
+    this.inputLoopId = setInterval(this.inputLoop, this.loopMs);
   }
   componentWillUnmount() {
     clearInterval(this.inputLoopId);
   }
-  inputLoop = () => {};
   onKeyDown = ({ keyCode }) => {
-    const { leftPaddle } = this.state;
-
     if (this.controls[keyCode] !== undefined) this.controls[keyCode] = true;
-
-    if (keyCode === 87) {
-      this.setState({
-        ...this.state,
-        leftPaddle: this.didHitUpperLimit(leftPaddle.y)
-          ? leftPaddle
-          : this.moveUp(leftPaddle)
-      });
-    }
-    if (keyCode === 83) {
-      this.setState({
-        ...this.state,
-        leftPaddle: this.didHitLowerLimit(leftPaddle.y)
-          ? leftPaddle
-          : this.moveDown(leftPaddle)
-      });
-    }
   };
   onKeyUp = ({ keyCode }) => {
     if (this.controls[keyCode] !== undefined) this.controls[keyCode] = false;
   };
-  moveUp = paddle => ({
-    ...paddle,
-    y: paddle.y - this.speed
-  });
-  moveDown = paddle => ({
-    ...paddle,
-    y: paddle.y + this.speed
-  });
+  inputLoop = () => {
+    const { controls, speed } = this;
+    const { leftPaddle } = this.state;
+
+    if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
+      leftPaddle.y -= speed;
+    if (controls['83'] && !this.didHitLowerLimit(leftPaddle.y))
+      leftPaddle.y += speed;
+
+    this.setState({
+      ...this.state,
+      leftPaddle
+    });
+  };
   didHitUpperLimit(pos) {
     return pos < this.speed;
   }
@@ -75,6 +61,7 @@ class App extends Component {
     '87': false,
     '83': false
   };
+  loopMs = 75;
   render() {
     const { leftPaddle } = this.state;
 

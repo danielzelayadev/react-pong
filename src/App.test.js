@@ -11,12 +11,16 @@ test('should render without crashing', () => {
 
 test('left paddle should move up if W is down', () => {
   const wrapper = shallow(<App />, shallowOptions);
+  const instance = wrapper.instance();
   const leftPaddle = wrapper.find('#left-paddle').first();
-  const event = { keyCode: 87 };
-
   const y0 = leftPaddle.props().y;
 
-  wrapper.simulate('keydown', event);
+  instance.controls = {
+    '87': true,
+    '83': false
+  };
+
+  instance.inputLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(y0 - wrapper.instance().speed);
   expect(wrapper).toMatchSnapshot();
@@ -24,12 +28,16 @@ test('left paddle should move up if W is down', () => {
 
 test('left paddle should move down if S is down', () => {
   const wrapper = shallow(<App />, shallowOptions);
+  const instance = wrapper.instance();
   const leftPaddle = wrapper.find('#left-paddle').first();
-  const event = { keyCode: 83 };
-
   const y0 = leftPaddle.props().y;
 
-  wrapper.simulate('keydown', event);
+  instance.controls = {
+    '87': false,
+    '83': true
+  };
+
+  instance.inputLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(y0 + wrapper.instance().speed);
   expect(wrapper).toMatchSnapshot();
@@ -85,14 +93,14 @@ test('unknown key downs and ups should be ignored', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('input loop should start on mount to run every 10ms', () => {
+test('input loop should start on mount to run every 75ms', () => {
   const instance = mount(<App />).instance();
 
   instance.inputLoop = jest.fn();
 
   instance.componentDidMount();
 
-  expect(setInterval).toHaveBeenCalledWith(instance.inputLoop, 10);
+  expect(setInterval).toHaveBeenCalledWith(instance.inputLoop, 75);
   expect(setInterval).toHaveBeenCalledTimes(2);
   expect(instance.inputLoopId).toBeDefined();
 });
@@ -106,10 +114,10 @@ test('input loop interval should be cleared on unmount', () => {
   expect(clearInterval).toHaveBeenCalledWith(inputLoopId);
 });
 
-test('input loop should be called every 10 milliseconds', () => {
+test('input loop should be called every 75ms', () => {
   const instance = mount(<App />).instance();
   const timePassed = 123487;
-  const timesCalled = Math.floor(timePassed / 10);
+  const timesCalled = Math.floor(timePassed / 75);
 
   instance.inputLoop = jest.fn();
 
@@ -135,6 +143,8 @@ test('leftPaddle Y coordinate should stay the same if upper limit is reached', (
 
   wrapper.simulate('keydown', event);
 
+  instance.inputLoop();
+
   expect(wrapper.state().leftPaddle.y).toBe(0);
   expect(wrapper).toMatchSnapshot();
 });
@@ -154,6 +164,8 @@ test('leftPaddle Y coordinate should stay the same if lower limit is reached', (
   });
 
   wrapper.simulate('keydown', event);
+
+  instance.inputLoop();
 
   expect(wrapper.state().leftPaddle.y).toBe(limit);
   expect(wrapper).toMatchSnapshot();
