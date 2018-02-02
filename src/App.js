@@ -31,10 +31,10 @@ class App extends Component {
     clearInterval(this.inputLoopId);
   }
   onKeyDown = ({ keyCode }) => {
-    if (this.controls[keyCode] !== undefined) this.controls[keyCode] = true;
+    this.controls[keyCode] = true;
   };
   onKeyUp = ({ keyCode }) => {
-    if (this.controls[keyCode] !== undefined) this.controls[keyCode] = false;
+    this.controls[keyCode] = false;
   };
   inputLoop = () => {
     const { controls, speed } = this;

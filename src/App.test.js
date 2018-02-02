@@ -43,15 +43,6 @@ test('left paddle should move down if S is down', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('nothing should happen if any other key is down', () => {
-  const wrapper = shallow(<App />, shallowOptions);
-  const event = { keyCode: -1 };
-
-  wrapper.simulate('keydown', event);
-
-  expect(wrapper).toMatchSnapshot();
-});
-
 test('all game controls should be false on mount', () => {
   const controls = {
     '87': false,
