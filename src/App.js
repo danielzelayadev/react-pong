@@ -24,12 +24,16 @@ class App extends Component {
     if (keyCode === 87)
       this.setState({
         ...this.state,
-        leftPaddle: this.moveUp(leftPaddle)
+        leftPaddle: this.didHitUpperLimit(leftPaddle.y)
+          ? leftPaddle
+          : this.moveUp(leftPaddle)
       });
     if (keyCode === 83)
       this.setState({
         ...this.state,
-        leftPaddle: this.moveDown(leftPaddle)
+        leftPaddle: this.didHitLowerLimit(leftPaddle.y)
+          ? leftPaddle
+          : this.moveDown(leftPaddle)
       });
   };
   moveUp = paddle => ({
@@ -40,16 +44,23 @@ class App extends Component {
     ...paddle,
     y: paddle.y + this.speed
   });
-  speed = 20;
+  didHitUpperLimit(pos) {
+    return pos < this.speed;
+  }
+  didHitLowerLimit(pos) {
+    return pos + this.stageHeight / 2 > this.stageHeight - this.speed;
+  }
+  speed = 50;
+  stageWidth = 1500;
+  stageHeight = 1000;
   render() {
     const { leftPaddle } = this.state;
 
     return (
       <Wrapper onKeyDown={this.onKeyDown} tabIndex="0">
-        <Rect width="1500px" height="1000px">
+        <Rect width={`${this.stageWidth}px`} height={`${this.stageHeight}px`}>
           <Rect
             id="left-paddle"
-            position="absolute"
             width="30px"
             height="50%"
             bgColor="#fff"

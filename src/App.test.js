@@ -43,3 +43,42 @@ test('nothing should happen if any other key is down', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('leftPaddle Y coordinate should stay the same if upper limit is reached', () => {
+  const wrapper = shallow(<App />);
+  const instance = wrapper.instance();
+  const event = { keyCode: 87 };
+
+  instance.setState({
+    ...instance.state,
+    leftPaddle: {
+      ...instance.state.leftPaddle,
+      y: 0
+    }
+  });
+
+  wrapper.simulate('keydown', event);
+
+  expect(wrapper.state().leftPaddle.y).toBe(0);
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('leftPaddle Y coordinate should stay the same if lower limit is reached', () => {
+  const wrapper = shallow(<App />);
+  const instance = wrapper.instance();
+  const event = { keyCode: 83 };
+  const limit = instance.stageHeight - instance.stageHeight / 2;
+
+  instance.setState({
+    ...instance.state,
+    leftPaddle: {
+      ...instance.state.leftPaddle,
+      y: limit
+    }
+  });
+
+  wrapper.simulate('keydown', event);
+
+  expect(wrapper.state().leftPaddle.y).toBe(limit);
+  expect(wrapper).toMatchSnapshot();
+});
