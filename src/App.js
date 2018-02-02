@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Rect from './Rect';
+import { focusElement } from './helpers';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +19,9 @@ class App extends Component {
       y: 300
     }
   };
+  componentDidMount() {
+    focusElement(this.wrapper);
+  }
   onKeyDown = ({ keyCode }) => {
     const { leftPaddle } = this.state;
 
@@ -59,7 +63,13 @@ class App extends Component {
     const { leftPaddle } = this.state;
 
     return (
-      <Wrapper onKeyDown={this.onKeyDown} tabIndex="0">
+      <Wrapper
+        innerRef={wrapper => {
+          this.wrapper = wrapper;
+        }}
+        onKeyDown={this.onKeyDown}
+        tabIndex="0"
+      >
         <Rect width={this.stageWidth} height={this.stageHeight}>
           <Rect
             id="left-paddle"
