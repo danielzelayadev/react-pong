@@ -21,24 +21,36 @@ class App extends Component {
   };
   componentDidMount() {
     focusElement(this.wrapper);
+    this.inputLoopId = setInterval(this.inputLoop, 10);
   }
+  componentWillUnmount() {
+    clearInterval(this.inputLoopId);
+  }
+  inputLoop = () => {};
   onKeyDown = ({ keyCode }) => {
     const { leftPaddle } = this.state;
 
-    if (keyCode === 87)
+    if (this.controls[keyCode] !== undefined) this.controls[keyCode] = true;
+
+    if (keyCode === 87) {
       this.setState({
         ...this.state,
         leftPaddle: this.didHitUpperLimit(leftPaddle.y)
           ? leftPaddle
           : this.moveUp(leftPaddle)
       });
-    if (keyCode === 83)
+    }
+    if (keyCode === 83) {
       this.setState({
         ...this.state,
         leftPaddle: this.didHitLowerLimit(leftPaddle.y)
           ? leftPaddle
           : this.moveDown(leftPaddle)
       });
+    }
+  };
+  onKeyUp = ({ keyCode }) => {
+    if (this.controls[keyCode] !== undefined) this.controls[keyCode] = false;
   };
   moveUp = paddle => ({
     ...paddle,
@@ -72,6 +84,7 @@ class App extends Component {
           this.wrapper = wrapper;
         }}
         onKeyDown={this.onKeyDown}
+        onKeyUp={this.onKeyUp}
         tabIndex="0"
       >
         <Rect width={this.stageWidth} height={this.stageHeight}>

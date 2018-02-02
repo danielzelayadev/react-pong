@@ -6,6 +6,8 @@ import App from './App';
 
 const shallowOptions = { disableLifecycleMethods: true };
 
+jest.useFakeTimers();
+
 test('should render without crashing', () => {
   const wrapper = shallow(<App />, shallowOptions);
   expect(wrapper).toMatchSnapshot();
@@ -54,6 +56,67 @@ test('all game controls should be false on mount', () => {
   const instControls = shallow(<App />, shallowOptions).instance().controls;
 
   expect(instControls).toEqual(controls);
+});
+
+test('a control key should be equal to true when their respective key is down', () => {
+  const wrapper = shallow(<App />, shallowOptions);
+
+  wrapper.simulate('keydown', { keyCode: 87 });
+  wrapper.simulate('keydown', { keyCode: 83 });
+
+  expect(wrapper.instance().controls['87']).toBe(true);
+  expect(wrapper.instance().controls['83']).toBe(true);
+});
+
+test('a control key should be equal to false when their respective key is up', () => {
+  const wrapper = shallow(<App />, shallowOptions);
+
+  wrapper.simulate('keydown', { keyCode: 87 });
+  wrapper.simulate('keyup', { keyCode: 87 });
+  wrapper.simulate('keydown', { keyCode: 83 });
+  wrapper.simulate('keyup', { keyCode: 83 });
+
+  expect(wrapper.instance().controls['87']).toBe(false);
+  expect(wrapper.instance().controls['83']).toBe(false);
+});
+
+test('unknown key downs and ups should be ignored', () => {
+  const wrapper = shallow(<App />, shallowOptions);
+
+  wrapper.simulate('keydown', { keyCode: 90 });
+  wrapper.simulate('keyup', { keyCode: 90 });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('input loop should start on mount', () => {
+  const instance = mount(<App />).instance();
+
+  expect(setInterval).toHaveBeenCalledWith(instance.inputLoop, 10);
+  expect(setInterval).toHaveBeenCalledTimes(1);
+  expect(instance.inputLoopId).toBeDefined();
+});
+
+test('input loop interval should be cleared on unmount', () => {
+  const wrapper = mount(<App />);
+  const { inputLoopId } = wrapper.instance();
+
+  wrapper.unmount();
+
+  expect(clearInterval).toHaveBeenCalledWith(inputLoopId);
+});
+
+test('input loop should be called every 10 milliseconds', () => {
+  const instance = mount(<App />).instance();
+
+  instance.inputLoop = jest.fn();
+
+  expect(instance.inputLoop).not.toBeCalled();
+
+  jest.runAllTimers();
+
+  expect(instance.inputLoop).toBeCalled();
+  expect(instance.inputLoop).toHaveBeenCalledTimes(1);
 });
 
 test('leftPaddle Y coordinate should stay the same if upper limit is reached', () => {
