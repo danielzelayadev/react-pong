@@ -1,12 +1,8 @@
-// @flow
-
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
 
 const shallowOptions = { disableLifecycleMethods: true };
-
-jest.useFakeTimers();
 
 test('should render without crashing', () => {
   const wrapper = shallow(<App />, shallowOptions);
@@ -89,11 +85,15 @@ test('unknown key downs and ups should be ignored', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('input loop should start on mount', () => {
+test('input loop should start on mount to run every 10ms', () => {
   const instance = mount(<App />).instance();
 
+  instance.inputLoop = jest.fn();
+
+  instance.componentDidMount();
+
   expect(setInterval).toHaveBeenCalledWith(instance.inputLoop, 10);
-  expect(setInterval).toHaveBeenCalledTimes(1);
+  expect(setInterval).toHaveBeenCalledTimes(2);
   expect(instance.inputLoopId).toBeDefined();
 });
 
@@ -108,15 +108,16 @@ test('input loop interval should be cleared on unmount', () => {
 
 test('input loop should be called every 10 milliseconds', () => {
   const instance = mount(<App />).instance();
+  const timePassed = 123487;
+  const timesCalled = Math.floor(timePassed / 10);
 
   instance.inputLoop = jest.fn();
 
-  expect(instance.inputLoop).not.toBeCalled();
+  instance.componentDidMount();
 
-  jest.runAllTimers();
+  jest.advanceTimersByTime(timePassed);
 
-  expect(instance.inputLoop).toBeCalled();
-  expect(instance.inputLoop).toHaveBeenCalledTimes(1);
+  expect(instance.inputLoop).toHaveBeenCalledTimes(timesCalled);
 });
 
 test('leftPaddle Y coordinate should stay the same if upper limit is reached', () => {

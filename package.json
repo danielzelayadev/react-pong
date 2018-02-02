@@ -16,7 +16,8 @@
     "watch": "webpack --watch"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./src/setupTests.js"
+    "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "timers": "fake"
   },
   "dependencies": {
     "react": "16.2.0",
