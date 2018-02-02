@@ -21,6 +21,14 @@ class App extends Component {
     rightPaddle: {
       x: 1340,
       y: 375
+    },
+    ball: {
+      id: 'ball',
+      color: '#fff',
+      width: 30,
+      height: 30,
+      x: 680,
+      y: 280
     }
   };
   componentDidMount() {
@@ -67,7 +75,7 @@ class App extends Component {
   };
   loopMs = 75;
   render() {
-    const { leftPaddle, rightPaddle } = this.state;
+    const { leftPaddle, rightPaddle, ball } = this.state;
 
     return (
       <Wrapper
@@ -86,6 +94,7 @@ class App extends Component {
             color="#fff"
             {...leftPaddle}
           />
+          <Rect {...ball} />
           <Rect
             id="right-paddle"
             width={this.paddleWidth}

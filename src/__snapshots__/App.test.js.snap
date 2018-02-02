@@ -31,6 +31,14 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
+          height={30}
+          id="ball"
+          width={30}
+          x={680}
+          y={280}
+        />
+        <styled.div
+          color="#fff"
           height={250}
           id="right-paddle"
           width={30}
@@ -60,6 +68,14 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />,
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -83,6 +99,22 @@ ShallowWrapper {
             "width": 30,
             "x": 100,
             "y": 375,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "#fff",
+            "height": 30,
+            "id": "ball",
+            "width": 30,
+            "x": 680,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,
@@ -129,6 +161,14 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -158,6 +198,14 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
+              height={30}
+              id="ball"
+              width={30}
+              x={680}
+              y={280}
+            />,
+            <styled.div
+              color="#fff"
               height={250}
               id="right-paddle"
               width={30}
@@ -181,6 +229,22 @@ ShallowWrapper {
               "width": 30,
               "x": 100,
               "y": 375,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "#fff",
+              "height": 30,
+              "id": "ball",
+              "width": 30,
+              "x": 680,
+              "y": 280,
             },
             "ref": null,
             "rendered": null,
@@ -250,6 +314,14 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
+          height={30}
+          id="ball"
+          width={30}
+          x={680}
+          y={280}
+        />
+        <styled.div
+          color="#fff"
           height={250}
           id="right-paddle"
           width={30}
@@ -279,6 +351,14 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />,
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -302,6 +382,22 @@ ShallowWrapper {
             "width": 30,
             "x": 100,
             "y": 375,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "#fff",
+            "height": 30,
+            "id": "ball",
+            "width": 30,
+            "x": 680,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,
@@ -348,6 +444,14 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -377,6 +481,14 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
+              height={30}
+              id="ball"
+              width={30}
+              x={680}
+              y={280}
+            />,
+            <styled.div
+              color="#fff"
               height={250}
               id="right-paddle"
               width={30}
@@ -400,6 +512,22 @@ ShallowWrapper {
               "width": 30,
               "x": 100,
               "y": 375,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "#fff",
+              "height": 30,
+              "id": "ball",
+              "width": 30,
+              "x": 680,
+              "y": 280,
             },
             "ref": null,
             "rendered": null,
@@ -469,6 +597,14 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
+          height={30}
+          id="ball"
+          width={30}
+          x={680}
+          y={280}
+        />
+        <styled.div
+          color="#fff"
           height={250}
           id="right-paddle"
           width={30}
@@ -498,6 +634,14 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />,
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -521,6 +665,22 @@ ShallowWrapper {
             "width": 30,
             "x": 100,
             "y": 750,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "#fff",
+            "height": 30,
+            "id": "ball",
+            "width": 30,
+            "x": 680,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,
@@ -567,6 +727,14 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -596,6 +764,14 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
+              height={30}
+              id="ball"
+              width={30}
+              x={680}
+              y={280}
+            />,
+            <styled.div
+              color="#fff"
               height={250}
               id="right-paddle"
               width={30}
@@ -619,6 +795,22 @@ ShallowWrapper {
               "width": 30,
               "x": 100,
               "y": 750,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "#fff",
+              "height": 30,
+              "id": "ball",
+              "width": 30,
+              "x": 680,
+              "y": 280,
             },
             "ref": null,
             "rendered": null,
@@ -688,6 +880,14 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
+          height={30}
+          id="ball"
+          width={30}
+          x={680}
+          y={280}
+        />
+        <styled.div
+          color="#fff"
           height={250}
           id="right-paddle"
           width={30}
@@ -717,6 +917,14 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />,
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -740,6 +948,22 @@ ShallowWrapper {
             "width": 30,
             "x": 100,
             "y": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "#fff",
+            "height": 30,
+            "id": "ball",
+            "width": 30,
+            "x": 680,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,
@@ -786,6 +1010,14 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -815,6 +1047,14 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
+              height={30}
+              id="ball"
+              width={30}
+              x={680}
+              y={280}
+            />,
+            <styled.div
+              color="#fff"
               height={250}
               id="right-paddle"
               width={30}
@@ -838,6 +1078,22 @@ ShallowWrapper {
               "width": 30,
               "x": 100,
               "y": 0,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "#fff",
+              "height": 30,
+              "id": "ball",
+              "width": 30,
+              "x": 680,
+              "y": 280,
             },
             "ref": null,
             "rendered": null,
@@ -907,6 +1163,14 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
+          height={30}
+          id="ball"
+          width={30}
+          x={680}
+          y={280}
+        />
+        <styled.div
+          color="#fff"
           height={250}
           id="right-paddle"
           width={30}
@@ -936,6 +1200,14 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />,
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -959,6 +1231,22 @@ ShallowWrapper {
             "width": 30,
             "x": 100,
             "y": 375,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "#fff",
+            "height": 30,
+            "id": "ball",
+            "width": 30,
+            "x": 680,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,
@@ -1005,6 +1293,14 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -1034,6 +1330,14 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
+              height={30}
+              id="ball"
+              width={30}
+              x={680}
+              y={280}
+            />,
+            <styled.div
+              color="#fff"
               height={250}
               id="right-paddle"
               width={30}
@@ -1057,6 +1361,22 @@ ShallowWrapper {
               "width": 30,
               "x": 100,
               "y": 375,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "#fff",
+              "height": 30,
+              "id": "ball",
+              "width": 30,
+              "x": 680,
+              "y": 280,
             },
             "ref": null,
             "rendered": null,
@@ -1126,6 +1446,14 @@ ShallowWrapper {
         />
         <styled.div
           color="#fff"
+          height={30}
+          id="ball"
+          width={30}
+          x={680}
+          y={280}
+        />
+        <styled.div
+          color="#fff"
           height={250}
           id="right-paddle"
           width={30}
@@ -1155,6 +1483,14 @@ ShallowWrapper {
           />,
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />,
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -1178,6 +1514,22 @@ ShallowWrapper {
             "width": 30,
             "x": 100,
             "y": 375,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "#fff",
+            "height": 30,
+            "id": "ball",
+            "width": 30,
+            "x": 680,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,
@@ -1224,6 +1576,14 @@ ShallowWrapper {
           />
           <styled.div
             color="#fff"
+            height={30}
+            id="ball"
+            width={30}
+            x={680}
+            y={280}
+          />
+          <styled.div
+            color="#fff"
             height={250}
             id="right-paddle"
             width={30}
@@ -1253,6 +1613,14 @@ ShallowWrapper {
             />,
             <styled.div
               color="#fff"
+              height={30}
+              id="ball"
+              width={30}
+              x={680}
+              y={280}
+            />,
+            <styled.div
+              color="#fff"
               height={250}
               id="right-paddle"
               width={30}
@@ -1276,6 +1644,22 @@ ShallowWrapper {
               "width": 30,
               "x": 100,
               "y": 375,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "color": "#fff",
+              "height": 30,
+              "id": "ball",
+              "width": 30,
+              "x": 680,
+              "y": 280,
             },
             "ref": null,
             "rendered": null,
