@@ -10,13 +10,9 @@ const Rect = styled.div`
   background-color: ${({ bgColor = defaultBgColor }) => bgColor};
   width: ${({ width = defaultWidth }) => width};
   height: ${({ height = defaultHeight }) => height};
-  position: ${({ position }) => {
-    if (position === 'absolute') return position;
-    return 'relative';
-  }};
-  left: ${({ x = defaultX }) => x}px;
-  top: ${({ y = defaultY }) => y}px;
+  transform: ${({ x = defaultX, y = defaultY }) => `translate(${x}px, ${y}px)`};
   display: inline-block;
+  transition: transform 150ms ease-in-out;
 `;
 
 export default Rect;

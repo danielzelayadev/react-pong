@@ -42,26 +42,13 @@ test(`background-color should equal the bgColor provided`, () => {
   expect(wrapper).toHaveStyleRule('background-color', bgColor);
 });
 
-test(`position should be relative if any other than absolute is provided`, () => {
-  const wrapper = shallow(<Rect position="fixed" />);
-  expect(wrapper).toHaveStyleRule('position', 'relative');
-});
-
-test(`position should be relative if no position is provided`, () => {
-  const wrapper = shallow(<Rect />);
-  expect(wrapper).toHaveStyleRule('position', 'relative');
-});
-
-test(`position should be absolute if absolute is provided`, () => {
-  const wrapper = shallow(<Rect position="absolute" />);
-  expect(wrapper).toHaveStyleRule('position', 'absolute');
-});
-
 test(`coordinates should default to (${defaultX}, ${defaultY}) if not provided`, () => {
   const wrapper = shallow(<Rect />);
 
-  expect(wrapper).toHaveStyleRule('left', `${defaultX}px`);
-  expect(wrapper).toHaveStyleRule('top', `${defaultY}px`);
+  expect(wrapper).toHaveStyleRule(
+    'transform',
+    `translate(${defaultX}px, ${defaultY}px)`
+  );
 });
 
 test(`coordinates should be equal to the values provided`, () => {
@@ -69,6 +56,5 @@ test(`coordinates should be equal to the values provided`, () => {
   const y = 20;
   const wrapper = shallow(<Rect x={x} y={y} />);
 
-  expect(wrapper).toHaveStyleRule('left', `${x}px`);
-  expect(wrapper).toHaveStyleRule('top', `${y}px`);
+  expect(wrapper).toHaveStyleRule('transform', `translate(${x}px, ${y}px)`);
 });
