@@ -1,5 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`left paddle should move down if S is down 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <styled.div
+        height="1000px"
+        width="1500px"
+      >
+        <styled.div
+          bgColor="#fff"
+          height="50%"
+          id="left-paddle"
+          position="absolute"
+          width="30px"
+          x={100}
+          y={320}
+        />
+      </styled.div>,
+      "onKeyDown": [Function],
+      "tabIndex": "0",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.div
+          bgColor="#fff"
+          height="50%"
+          id="left-paddle"
+          position="absolute"
+          width="30px"
+          x={100}
+          y={320}
+        />,
+        "height": "1000px",
+        "width": "1500px",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "bgColor": "#fff",
+          "height": "50%",
+          "id": "left-paddle",
+          "position": "absolute",
+          "width": "30px",
+          "x": 100,
+          "y": 320,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.div
+          height="1000px"
+          width="1500px"
+        >
+          <styled.div
+            bgColor="#fff"
+            height="50%"
+            id="left-paddle"
+            position="absolute"
+            width="30px"
+            x={100}
+            y={320}
+          />
+        </styled.div>,
+        "onKeyDown": [Function],
+        "tabIndex": "0",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.div
+            bgColor="#fff"
+            height="50%"
+            id="left-paddle"
+            position="absolute"
+            width="30px"
+            x={100}
+            y={320}
+          />,
+          "height": "1000px",
+          "width": "1500px",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bgColor": "#fff",
+            "height": "50%",
+            "id": "left-paddle",
+            "position": "absolute",
+            "width": "30px",
+            "x": 100,
+            "y": 320,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`left paddle should move up if W is down 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -28,7 +176,7 @@ ShallowWrapper {
           position="absolute"
           width="30px"
           x={100}
-          y={295}
+          y={280}
         />
       </styled.div>,
       "onKeyDown": [Function],
@@ -47,7 +195,7 @@ ShallowWrapper {
           position="absolute"
           width="30px"
           x={100}
-          y={295}
+          y={280}
         />,
         "height": "1000px",
         "width": "1500px",
@@ -64,7 +212,7 @@ ShallowWrapper {
           "position": "absolute",
           "width": "30px",
           "x": 100,
-          "y": 295,
+          "y": 280,
         },
         "ref": null,
         "rendered": null,
@@ -91,7 +239,7 @@ ShallowWrapper {
             position="absolute"
             width="30px"
             x={100}
-            y={295}
+            y={280}
           />
         </styled.div>,
         "onKeyDown": [Function],
@@ -110,7 +258,7 @@ ShallowWrapper {
             position="absolute"
             width="30px"
             x={100}
-            y={295}
+            y={280}
           />,
           "height": "1000px",
           "width": "1500px",
@@ -127,7 +275,7 @@ ShallowWrapper {
             "position": "absolute",
             "width": "30px",
             "x": 100,
-            "y": 295,
+            "y": 280,
           },
           "ref": null,
           "rendered": null,

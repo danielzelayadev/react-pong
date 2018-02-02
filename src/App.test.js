@@ -22,6 +22,19 @@ test('left paddle should move up if W is down', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('left paddle should move down if S is down', () => {
+  const wrapper = shallow(<App />);
+  const leftPaddle = wrapper.find('#left-paddle').first();
+  const event = { keyCode: 83 };
+
+  const y0 = leftPaddle.props().y;
+
+  wrapper.simulate('keydown', event);
+
+  expect(wrapper.state().leftPaddle.y).toBe(y0 + wrapper.instance().speed);
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('nothing should happen if any other key is down', () => {
   const wrapper = shallow(<App />);
   const event = { keyCode: -1 };

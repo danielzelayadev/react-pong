@@ -26,12 +26,21 @@ class App extends Component {
         ...this.state,
         leftPaddle: this.moveUp(leftPaddle)
       });
+    if (keyCode === 83)
+      this.setState({
+        ...this.state,
+        leftPaddle: this.moveDown(leftPaddle)
+      });
   };
   moveUp = paddle => ({
     ...paddle,
     y: paddle.y - this.speed
   });
-  speed = 5;
+  moveDown = paddle => ({
+    ...paddle,
+    y: paddle.y + this.speed
+  });
+  speed = 20;
   render() {
     const { leftPaddle } = this.state;
 
