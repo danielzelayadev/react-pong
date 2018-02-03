@@ -16,6 +16,7 @@ const Rect = styled.div.attrs({
   height: ${({ height = defaultHeight }) => height}px;
   display: flex;
   transition: transform 150ms ease-in-out;
+  position: absolute;
 `;
 
 export default Rect;
