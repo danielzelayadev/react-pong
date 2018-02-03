@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Rect from './Rect';
-import { focusElement } from './helpers';
+import { focusElement, randomUnitVector } from './helpers';
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,6 +34,7 @@ class App extends Component {
   componentDidMount() {
     focusElement(this.wrapper);
     this.gameLoopId = setInterval(this.gameLoop, this.loopMs);
+    this.ballDir = randomUnitVector();
   }
   componentWillUnmount() {
     clearInterval(this.gameLoopId);

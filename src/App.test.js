@@ -2,6 +2,16 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
 
+jest.mock('./helpers', () => ({
+  focusElement: jest.fn(),
+  randomUnitVector: jest.fn(() => ({
+    x: -1,
+    y: 1
+  }))
+}));
+
+const { focusElement, randomUnitVector } = require('./helpers');
+
 const shallowOptions = { disableLifecycleMethods: true };
 
 test('should render without crashing', () => {
@@ -165,7 +175,16 @@ test('leftPaddle Y coordinate should stay the same if lower limit is reached', (
 test('should gain focus on mount', () => {
   const wrapper = mount(<App />);
   const instance = wrapper.instance();
-  instance.wrapper = { focus: jest.fn() };
-  instance.componentDidMount();
-  expect(instance.wrapper.focus).toHaveBeenCalled();
+  expect(focusElement).toHaveBeenCalledWith(instance.wrapper);
+});
+
+test('ball should be set an initial direction on mount via randomUnitVector', () => {
+  const { ballDir } = mount(<App />).instance();
+  const expectedBallDir = {
+    x: -1,
+    y: 1
+  };
+
+  expect(randomUnitVector).toHaveBeenCalled();
+  expect(ballDir).toEqual(expectedBallDir);
 });

@@ -1,4 +1,5 @@
 import { focusElement, randomUnitVector } from './helpers';
+import { isUnit } from './testHelpers';
 
 describe('focusElement', () => {
   test('should throw error if no element is passed', () => {
@@ -18,8 +19,6 @@ describe('randomUnitVector', () => {
     const c = randomUnitVector();
     const d = randomUnitVector();
     const e = randomUnitVector();
-
-    const isUnit = v => v === 1 || v === -1;
 
     expect(isUnit(a.x) && isUnit(a.y)).toBe(true);
     expect(isUnit(b.x) && isUnit(b.y)).toBe(true);
