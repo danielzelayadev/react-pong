@@ -202,7 +202,7 @@ test('ball should move in its direction on gameLoop tick', () => {
   };
 
   const expectedBallPos = {
-    x: ball.x - instance.speed * instance.ballDir.x,
+    x: ball.x + instance.speed * instance.ballDir.x,
     y: ball.y - instance.speed * instance.ballDir.y
   };
 
@@ -237,4 +237,32 @@ test('ball should bounce back if it hits the upper stage border', () => {
   instance.gameLoop();
 
   expect(instance.state.ball.y).toBe(instance.speed);
+});
+
+test('ball should bounce back if it hits the lower stage border', () => {
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const { x } = instance.state.ball;
+  const y = instance.stageHeight - instance.state.ball.height;
+
+  instance.state.ball = {
+    ...instance.state.ball,
+    y
+  };
+
+  instance.ballDir = {
+    x: 1,
+    y: -1
+  };
+
+  instance.gameLoop();
+
+  expect(instance.ballDir.y).toBe(1);
+  expect(instance.ballDir.x).toBe(1);
+  expect(instance.state.ball.y).toBe(y);
+  expect(instance.state.ball.x).toBe(x + instance.speed);
+
+  instance.gameLoop();
+
+  expect(instance.state.ball.y).toBe(y - instance.speed);
 });
