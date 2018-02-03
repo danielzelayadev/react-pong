@@ -1,5 +1,6 @@
-import { focusElement, randomUnitVector } from './helpers';
-import { isUnit } from './testHelpers';
+import { focusElement, randomUnitVector, randomUnit } from './helpers';
+
+const isUnit = v => v === 1 || v === -1 || v === 0;
 
 describe('focusElement', () => {
   test('should throw error if no element is passed', () => {
@@ -25,5 +26,21 @@ describe('randomUnitVector', () => {
     expect(isUnit(c.x) && isUnit(c.y)).toBe(true);
     expect(isUnit(d.x) && isUnit(d.y)).toBe(true);
     expect(isUnit(e.x) && isUnit(e.y)).toBe(true);
+  });
+});
+
+describe('randomUnit', () => {
+  test('should return a random unit', () => {
+    const a = randomUnit();
+    const b = randomUnit();
+    const c = randomUnit();
+    const d = randomUnit();
+    const e = randomUnit();
+
+    expect(isUnit(a)).toBe(true);
+    expect(isUnit(b)).toBe(true);
+    expect(isUnit(c)).toBe(true);
+    expect(isUnit(d)).toBe(true);
+    expect(isUnit(e)).toBe(true);
   });
 });

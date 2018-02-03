@@ -3,7 +3,10 @@ export function focusElement(element) {
   element.focus();
 }
 
+export const randomUnit = () =>
+  Math.round(Math.random() * (Math.round(Math.random()) ? 1 : -1));
+
 export const randomUnitVector = () => ({
-  x: Math.round(Math.random()) ? 1 : -1,
-  y: Math.round(Math.random()) ? 1 : -1
+  x: randomUnit(),
+  y: randomUnit()
 });
