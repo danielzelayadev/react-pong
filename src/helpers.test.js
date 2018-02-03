@@ -1,4 +1,9 @@
-import { focusElement, randomUnitVector, randomUnit } from './helpers';
+import {
+  focusElement,
+  randomUnitVector,
+  randomUnit,
+  collisionDetected
+} from './helpers';
 
 const isUnit = v => v === 1 || v === -1;
 
@@ -42,5 +47,140 @@ describe('randomUnit', () => {
     expect(isUnit(c)).toBe(true);
     expect(isUnit(d)).toBe(true);
     expect(isUnit(e)).toBe(true);
+  });
+});
+
+describe('collisionDetected', () => {
+  test('should return true if collision is detected', () => {
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 15,
+          y: 11,
+          x2: 20,
+          y2: 16
+        }
+      )
+    ).toBe(true);
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 12,
+          y: 5,
+          x2: 20,
+          y2: 10
+        }
+      )
+    ).toBe(true);
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 5,
+          y: 12,
+          x2: 10,
+          y2: 17
+        }
+      )
+    ).toBe(true);
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 12,
+          y: 15,
+          x2: 20,
+          y2: 20
+        }
+      )
+    ).toBe(true);
+  });
+  test('should return false if collision is not detected', () => {
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 20,
+          y: 11,
+          x2: 20,
+          y2: 16
+        }
+      )
+    ).toBe(false);
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 15,
+          y: 0,
+          x2: 20,
+          y2: 5
+        }
+      )
+    ).toBe(false);
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 15,
+          y: 20,
+          x2: 20,
+          y2: 28
+        }
+      )
+    ).toBe(false);
+    expect(
+      collisionDetected(
+        {
+          x: 10,
+          y: 10,
+          x2: 15,
+          y2: 15
+        },
+        {
+          x: 0,
+          y: 11,
+          x2: 5,
+          y2: 16
+        }
+      )
+    ).toBe(false);
   });
 });
