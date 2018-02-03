@@ -19,7 +19,7 @@ class App extends Component {
       y: 375
     },
     rightPaddle: {
-      x: 1340,
+      x: 1370,
       y: 375
     },
     ball: {
@@ -50,14 +50,23 @@ class App extends Component {
     const { leftPaddle, ball } = this.state;
 
     if (ballDir) {
-      const ySpace =
-        ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);
+      if (this.ballOutOfBounds(ball.x, ball.width)) {
+        ball.x = this.ballStartX;
+        ball.y = this.ballStartY;
+        this.ballDir = {
+          x: 0,
+          y: 0
+        };
+      } else {
+        const ySpace =
+          ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);
 
-      ballDir.y *= ySpace ? 1 : -1;
+        ballDir.y *= ySpace ? 1 : -1;
 
-      ball.y -= (speed > ySpace ? ySpace : speed) * ballDir.y;
+        ball.y -= (speed > ySpace ? ySpace : speed) * ballDir.y;
 
-      ball.x += speed * ballDir.x;
+        ball.x += speed * ballDir.x;
+      }
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
@@ -71,6 +80,9 @@ class App extends Component {
       ball
     });
   };
+  ballOutOfBounds(x, w) {
+    return x < 0 || x + w > this.stageWidth;
+  }
   didHitUpperLimit(pos) {
     return pos < this.speed;
   }
@@ -87,6 +99,8 @@ class App extends Component {
     '83': false
   };
   loopMs = 75;
+  ballStartX = 680;
+  ballStartY = 485;
   render() {
     const { leftPaddle, rightPaddle, ball } = this.state;
 
@@ -107,7 +121,7 @@ class App extends Component {
             color="#fff"
             {...leftPaddle}
           />
-          <Rect {...ball} />
+          {!this.ballOutOfBounds(ball.x, ball.width) && <Rect {...ball} />}
           <Rect
             id="right-paddle"
             width={this.paddleWidth}

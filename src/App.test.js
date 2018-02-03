@@ -266,3 +266,49 @@ test('ball should bounce back if it hits the lower stage border', () => {
 
   expect(instance.state.ball.y).toBe(y - instance.speed);
 });
+
+test('ball should remount, reset its position if it goes out of bounds and stay put', () => {
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const {
+    state: { ball },
+    gameLoop,
+    stageWidth,
+    ballStartX,
+    ballStartY
+  } = instance;
+
+  const outOfB = [
+    -100,
+    stageWidth + ball.width + 100,
+    -1,
+    stageWidth + ball.width + 1
+  ];
+
+  outOfB.forEach(x => {
+    ball.x = x;
+    ball.y = ballStartY;
+    instance.ballDir = {
+      x: 1,
+      y: 1
+    };
+
+    wrapper.mount();
+
+    expect(wrapper.find('#ball').length).toBe(0);
+
+    gameLoop();
+
+    wrapper.mount();
+
+    expect(wrapper.find('#ball').length).toBeGreaterThan(0);
+    expect(ball.x).toBe(ballStartX);
+    expect(ball.y).toBe(ballStartY);
+    expect(ball.y).toBe(ballStartY);
+    expect(ball.y).toBe(ballStartY);
+    expect(instance.ballDir).toEqual({
+      x: 0,
+      y: 0
+    });
+  });
+});
