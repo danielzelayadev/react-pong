@@ -45,8 +45,7 @@ test(`background-color should equal the color provided`, () => {
 test(`coordinates should default to (${defaultX}, ${defaultY}) if not provided`, () => {
   const wrapper = shallow(<Rect />);
 
-  expect(wrapper).toHaveStyleRule(
-    'transform',
+  expect(wrapper.prop('style').transform).toBe(
     `translate(${defaultX}px,${defaultY}px)`
   );
 });
@@ -56,5 +55,5 @@ test(`coordinates should be equal to the values provided`, () => {
   const y = 20;
   const wrapper = shallow(<Rect x={x} y={y} />);
 
-  expect(wrapper).toHaveStyleRule('transform', `translate(${x}px,${y}px)`);
+  expect(wrapper.prop('style').transform).toBe(`translate(${x}px,${y}px)`);
 });

@@ -17,7 +17,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-bdVaJa bjWoUJ",
+      "className": "sc-bdVaJa jQFNVU",
+      "style": Object {
+        "transform": "translate(0px,0px)",
+      },
     },
     "ref": null,
     "rendered": null,
@@ -29,7 +32,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-bdVaJa bjWoUJ",
+        "className": "sc-bdVaJa jQFNVU",
+        "style": Object {
+          "transform": "translate(0px,0px)",
+        },
       },
       "ref": null,
       "rendered": null,
