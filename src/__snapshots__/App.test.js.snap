@@ -42,7 +42,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -79,7 +79,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -129,7 +129,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -172,7 +172,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -209,7 +209,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -259,7 +259,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
@@ -325,7 +325,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -362,7 +362,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -412,7 +412,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -455,7 +455,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -492,7 +492,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -542,7 +542,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
@@ -608,7 +608,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -645,7 +645,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -695,7 +695,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -738,7 +738,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -775,7 +775,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -825,7 +825,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
@@ -891,7 +891,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -928,7 +928,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -978,7 +978,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -1021,7 +1021,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -1058,7 +1058,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -1108,7 +1108,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
@@ -1174,7 +1174,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -1211,7 +1211,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -1261,7 +1261,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -1304,7 +1304,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -1341,7 +1341,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -1391,7 +1391,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
@@ -1457,7 +1457,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -1494,7 +1494,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -1544,7 +1544,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -1587,7 +1587,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -1624,7 +1624,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -1674,7 +1674,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
@@ -1740,7 +1740,7 @@ ShallowWrapper {
           height={250}
           id="right-paddle"
           width={30}
-          x={1340}
+          x={1370}
           y={375}
         />
       </styled.div>,
@@ -1777,7 +1777,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />,
         ],
@@ -1827,7 +1827,7 @@ ShallowWrapper {
             "height": 250,
             "id": "right-paddle",
             "width": 30,
-            "x": 1340,
+            "x": 1370,
             "y": 375,
           },
           "ref": null,
@@ -1870,7 +1870,7 @@ ShallowWrapper {
             height={250}
             id="right-paddle"
             width={30}
-            x={1340}
+            x={1370}
             y={375}
           />
         </styled.div>,
@@ -1907,7 +1907,7 @@ ShallowWrapper {
               height={250}
               id="right-paddle"
               width={30}
-              x={1340}
+              x={1370}
               y={375}
             />,
           ],
@@ -1957,7 +1957,7 @@ ShallowWrapper {
               "height": 250,
               "id": "right-paddle",
               "width": 30,
-              "x": 1340,
+              "x": 1370,
               "y": 375,
             },
             "ref": null,
