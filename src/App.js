@@ -57,6 +57,9 @@ class App extends Component {
           x: 0,
           y: 0
         };
+        setTimeout(() => {
+          this.ballDir = randomUnitVector();
+        }, 2000);
       } else {
         const ySpace =
           ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);

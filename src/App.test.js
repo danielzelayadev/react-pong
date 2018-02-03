@@ -312,3 +312,36 @@ test('ball should remount, reset its position if it goes out of bounds and stay 
     });
   });
 });
+
+test('ball should relaunch 2s after its position is reset', () => {
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const { state: { ball }, gameLoop, stageWidth, ballStartY } = instance;
+  const expectedBallDir = {
+    x: -1,
+    y: 1
+  };
+
+  const outOfB = [
+    -100,
+    stageWidth + ball.width + 100,
+    -1,
+    stageWidth + ball.width + 1
+  ];
+
+  outOfB.forEach(x => {
+    ball.x = x;
+    ball.y = ballStartY;
+    instance.ballDir = {
+      x: 1,
+      y: 1
+    };
+
+    gameLoop();
+
+    jest.advanceTimersByTime(2000);
+
+    expect(randomUnitVector).toHaveBeenCalled();
+    expect(instance.ballDir).toEqual(expectedBallDir);
+  });
+});
