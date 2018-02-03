@@ -20,7 +20,8 @@ class App extends Component {
     },
     rightPaddle: {
       x: 1370,
-      y: 375
+      y: 375,
+      dir: 0
     },
     ball: {
       id: 'ball',
@@ -98,6 +99,8 @@ class App extends Component {
           ballDir.x = -1;
         this.moveBall();
       }
+
+      if (ballDir.x === 1 && ballDir.y === 1) rightPaddle.dir = 1;
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
@@ -105,8 +108,11 @@ class App extends Component {
     if (controls['83'] && !this.didHitLowerLimit(leftPaddle.y))
       leftPaddle.y += speed;
 
+    if (rightPaddle.dir === 1) rightPaddle.y -= speed;
+
     this.setState({
       ...this.state,
+      rightPaddle,
       leftPaddle,
       ball
     });

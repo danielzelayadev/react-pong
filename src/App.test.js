@@ -448,3 +448,47 @@ test('ball should bounce back if it collides with right paddle', () => {
   expect(ball.x).toBe(x - speed);
   expect(ball.y).toBe(y);
 });
+
+test('rightPaddle should move up if the ball dir is (i,k)', () => {
+  jest.unmock('./helpers');
+
+  App = importApp();
+
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const { ballDir, gameLoop, speed } = instance;
+  const { rightPaddle } = instance.state;
+  const { y } = rightPaddle;
+
+  ballDir.x = 1;
+  ballDir.y = 1;
+
+  gameLoop();
+
+  expect(rightPaddle.dir).toBe(ballDir.y);
+  expect(rightPaddle.y).toBe(y - speed);
+});
+
+test('rightPaddle should move stay put if the ball dir is (-i,)', () => {
+  jest.unmock('./helpers');
+
+  App = importApp();
+
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const { ballDir, gameLoop } = instance;
+  const { rightPaddle } = instance.state;
+  const { dir, y } = rightPaddle;
+
+  ballDir.x = -1;
+  ballDir.y = 1;
+
+  gameLoop();
+
+  expect(rightPaddle.dir).toBe(dir);
+  expect(rightPaddle.y).toBe(y);
+});
+
+test('rightPaddle should move up if the ball dir si (i,-k)', () => {});
+
+test('stage should reset on goal', () => {});
