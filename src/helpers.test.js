@@ -1,6 +1,6 @@
 import { focusElement, randomUnitVector, randomUnit } from './helpers';
 
-const isUnit = v => v === 1 || v === -1 || v === 0;
+const isUnit = v => v === 1 || v === -1;
 
 describe('focusElement', () => {
   test('should throw error if no element is passed', () => {
