@@ -27,7 +27,7 @@ class App extends Component {
       color: '#fff',
       width: 30,
       height: 30,
-      x: 680,
+      x: 735,
       y: 485
     }
   };
@@ -99,7 +99,7 @@ class App extends Component {
     '83': false
   };
   loopMs = 75;
-  ballStartX = 680;
+  ballStartX = 735;
   ballStartY = 485;
   render() {
     const { leftPaddle, rightPaddle, ball } = this.state;
