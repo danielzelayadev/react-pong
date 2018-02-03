@@ -96,7 +96,7 @@ test('unknown key downs and ups should be ignored', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test(`input loop should start on mount to run every ${gameLoopMs}s`, () => {
+test(`game loop should start on mount to run every ${gameLoopMs}s`, () => {
   const instance = mount(<App />).instance();
 
   instance.gameLoop = jest.fn();
@@ -108,7 +108,7 @@ test(`input loop should start on mount to run every ${gameLoopMs}s`, () => {
   expect(instance.gameLoopId).toBeDefined();
 });
 
-test('input loop interval should be cleared on unmount', () => {
+test('game loop interval should be cleared on unmount', () => {
   const wrapper = mount(<App />);
   const { gameLoopId } = wrapper.instance();
 
@@ -117,10 +117,10 @@ test('input loop interval should be cleared on unmount', () => {
   expect(clearInterval).toHaveBeenCalledWith(gameLoopId);
 });
 
-test('input loop should be called every 75ms', () => {
+test(`game loop should be called every ${gameLoopMs}ms`, () => {
   const instance = mount(<App />).instance();
   const timePassed = 123487;
-  const timesCalled = Math.floor(timePassed / 75);
+  const timesCalled = Math.floor(timePassed / gameLoopMs);
 
   instance.gameLoop = jest.fn();
 
