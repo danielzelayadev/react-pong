@@ -197,13 +197,13 @@ test('ball should move in its direction on gameLoop tick', () => {
   const { ball } = instance.state;
 
   instance.ballDir = {
-    x: 1,
+    x: 0,
     y: 1
   };
 
   const expectedBallPos = {
-    x: ball.x * instance.ballDir.x + instance.speed,
-    y: ball.y * instance.ballDir.y + instance.speed
+    x: ball.x + instance.speed * instance.ballDir.x,
+    y: ball.y + instance.speed * instance.ballDir.y
   };
 
   instance.gameLoop();

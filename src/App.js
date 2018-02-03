@@ -50,8 +50,8 @@ class App extends Component {
     const { leftPaddle, ball } = this.state;
 
     if (ballDir) {
-      ball.x = ball.x * ballDir.x + speed;
-      ball.y = ball.y * ballDir.y + speed;
+      ball.x += speed * ballDir.x;
+      ball.y += speed * ballDir.y;
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
