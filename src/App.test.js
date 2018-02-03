@@ -212,4 +212,19 @@ test('ball should move in its direction on gameLoop tick', () => {
     x: ball.x,
     y: ball.y
   }).toEqual(expectedBallPos);
+  expect(wrapper).toMatchSnapshot();
 });
+
+// test('ball should bounce back if it hits the upper stage border', () => {
+//   const wrapper = mount(<App />);
+//   const instance = wrapper.instance();
+
+//   instance.state.ball = {
+//     ...instance.state.ball,
+//     y: 0
+//   };
+
+//   instance.ballDir = {
+//     x: 1
+//   }
+// });
