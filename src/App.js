@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Rect from './Rect';
-import { focusElement, randomUnitVector } from './helpers';
+import { focusElement, randomUnitVector, collisionDetected } from './helpers';
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,7 +28,8 @@ class App extends Component {
       width: 30,
       height: 30,
       x: 735,
-      y: 485
+      y: 485,
+      speed: 60
     }
   };
   componentDidMount() {
@@ -46,17 +47,11 @@ class App extends Component {
     this.controls[keyCode] = false;
   };
   gameLoop = () => {
-    const { controls, speed, ballDir, paddleWidth } = this;
+    const { controls, speed, ballDir, paddleWidth, paddleHeight } = this;
     const { leftPaddle, rightPaddle, ball } = this.state;
 
     if (ballDir) {
-      if (ball.x === leftPaddle.x + paddleWidth) {
-        ballDir.x = 1;
-        this.moveBall();
-      } else if (ball.x + ball.width === rightPaddle.x) {
-        ballDir.x = -1;
-        this.moveBall();
-      } else if (this.ballOutOfBounds(ball.x, ball.width)) {
+      if (this.ballOutOfBounds(ball.x, ball.width)) {
         ball.x = this.ballStartX;
         ball.y = this.ballStartY;
         this.ballDir = {
@@ -66,7 +61,43 @@ class App extends Component {
         setTimeout(() => {
           this.ballDir = randomUnitVector();
         }, 2000);
-      } else this.moveBall();
+      } else {
+        if (
+          collisionDetected(
+            {
+              x: ball.x,
+              y: ball.y,
+              x2: ball.x + ball.width,
+              y2: ball.y + ball.height
+            },
+            {
+              x: leftPaddle.x,
+              y: leftPaddle.y,
+              x2: leftPaddle.x + paddleWidth,
+              y2: leftPaddle.y + paddleHeight
+            }
+          )
+        )
+          ballDir.x = 1;
+        else if (
+          collisionDetected(
+            {
+              x: ball.x,
+              y: ball.y,
+              x2: ball.x + ball.width,
+              y2: ball.y + ball.height
+            },
+            {
+              x: rightPaddle.x,
+              y: rightPaddle.y,
+              x2: rightPaddle.x + paddleWidth,
+              y2: rightPaddle.y + paddleHeight
+            }
+          )
+        )
+          ballDir.x = -1;
+        this.moveBall();
+      }
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
@@ -81,8 +112,9 @@ class App extends Component {
     });
   };
   moveBall = () => {
-    const { ballDir, speed } = this;
+    const { ballDir } = this;
     const { ball } = this.state;
+    const { speed } = ball;
 
     const ySpace =
       ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);
@@ -94,7 +126,7 @@ class App extends Component {
     ball.x += speed * ballDir.x;
   };
   ballOutOfBounds(x, w) {
-    return x < 0 || x + w > this.stageWidth;
+    return x < w * -4 || x > this.stageWidth + w * 4;
   }
   didHitUpperLimit(pos) {
     return pos < this.speed;

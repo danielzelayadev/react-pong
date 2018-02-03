@@ -1,20 +1,17 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import App from './App';
-
-jest.mock('./helpers', () => ({
-  focusElement: jest.fn(),
-  randomUnitVector: jest.fn(() => ({
-    x: -1,
-    y: 1
-  }))
-}));
-
-const { focusElement, randomUnitVector } = require('./helpers');
 
 const shallowOptions = { disableLifecycleMethods: true };
 
 const gameLoopMs = 75;
+
+const importApp = () => require('./App.js').default;
+
+let App = importApp();
+
+beforeEach(() => {
+  jest.resetModules();
+});
 
 test('should render without crashing', () => {
   const wrapper = shallow(<App />, shallowOptions);
@@ -175,17 +172,36 @@ test('leftPaddle Y coordinate should stay the same if lower limit is reached', (
 });
 
 test('should gain focus on mount', () => {
+  jest.doMock('./helpers', () => jest.genMockFromModule('./helpers'));
+
+  App = importApp();
+
+  const { focusElement } = require('./helpers');
   const wrapper = mount(<App />);
   const instance = wrapper.instance();
+
   expect(focusElement).toHaveBeenCalledWith(instance.wrapper);
 });
 
 test('ball should be set an initial direction on mount via randomUnitVector', () => {
-  const { ballDir } = mount(<App />).instance();
   const expectedBallDir = {
     x: -1,
     y: 1
   };
+
+  jest.doMock('./helpers', () => {
+    const module = jest.genMockFromModule('./helpers');
+    return {
+      ...module,
+      randomUnitVector: jest.fn(() => expectedBallDir)
+    };
+  });
+
+  App = importApp();
+
+  const { randomUnitVector } = require('./helpers');
+
+  const { ballDir } = mount(<App />).instance();
 
   expect(randomUnitVector).toHaveBeenCalled();
   expect(ballDir).toEqual(expectedBallDir);
@@ -202,8 +218,8 @@ test('ball should move in its direction on gameLoop tick', () => {
   };
 
   const expectedBallPos = {
-    x: ball.x + instance.speed * instance.ballDir.x,
-    y: ball.y - instance.speed * instance.ballDir.y
+    x: ball.x + ball.speed * instance.ballDir.x,
+    y: ball.y - ball.speed * instance.ballDir.y
   };
 
   instance.gameLoop();
@@ -236,13 +252,13 @@ test('ball should bounce back if it hits the upper stage border', () => {
 
   instance.gameLoop();
 
-  expect(instance.state.ball.y).toBe(instance.speed);
+  expect(instance.state.ball.y).toBe(instance.state.ball.speed);
 });
 
 test('ball should bounce back if it hits the lower stage border', () => {
   const wrapper = mount(<App />);
   const instance = wrapper.instance();
-  const { x } = instance.state.ball;
+  const { x, speed } = instance.state.ball;
   const y = instance.stageHeight - instance.state.ball.height;
 
   instance.state.ball = {
@@ -260,11 +276,11 @@ test('ball should bounce back if it hits the lower stage border', () => {
   expect(instance.ballDir.y).toBe(1);
   expect(instance.ballDir.x).toBe(1);
   expect(instance.state.ball.y).toBe(y);
-  expect(instance.state.ball.x).toBe(x + instance.speed);
+  expect(instance.state.ball.x).toBe(x + speed);
 
   instance.gameLoop();
 
-  expect(instance.state.ball.y).toBe(y - instance.speed);
+  expect(instance.state.ball.y).toBe(y - speed);
 });
 
 test('ball should remount, reset its position if it goes out of bounds and stay put', () => {
@@ -279,10 +295,10 @@ test('ball should remount, reset its position if it goes out of bounds and stay 
   } = instance;
 
   const outOfB = [
-    -100,
-    stageWidth + ball.width + 100,
-    -1,
-    stageWidth + ball.width + 1
+    -1000,
+    stageWidth + ball.width + 400,
+    -400,
+    stageWidth + ball.width + 300
   ];
 
   outOfB.forEach(x => {
@@ -314,19 +330,32 @@ test('ball should remount, reset its position if it goes out of bounds and stay 
 });
 
 test('ball should relaunch 2s after its position is reset', () => {
-  const wrapper = mount(<App />);
-  const instance = wrapper.instance();
-  const { state: { ball }, gameLoop, stageWidth, ballStartY } = instance;
   const expectedBallDir = {
     x: -1,
     y: 1
   };
 
+  jest.doMock('./helpers', () => {
+    const module = jest.genMockFromModule('./helpers');
+    return {
+      ...module,
+      randomUnitVector: jest.fn(() => expectedBallDir)
+    };
+  });
+
+  App = importApp();
+
+  const { randomUnitVector } = require('./helpers');
+
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const { state: { ball }, gameLoop, stageWidth, ballStartY } = instance;
+
   const outOfB = [
-    -100,
-    stageWidth + ball.width + 100,
-    -1,
-    stageWidth + ball.width + 1
+    -1000,
+    stageWidth + ball.width + 400,
+    -400,
+    stageWidth + ball.width + 300
   ];
 
   outOfB.forEach(x => {
@@ -347,47 +376,75 @@ test('ball should relaunch 2s after its position is reset', () => {
 });
 
 test('ball should bounce back if it collides with left paddle', () => {
+  jest.doMock('./helpers', () => {
+    const module = jest.genMockFromModule('./helpers');
+    return {
+      ...module,
+      collisionDetected: jest.fn(() => true)
+    };
+  });
+
+  App = importApp();
+
   const wrapper = mount(<App />);
   const instance = wrapper.instance();
   const {
     state: { ball, leftPaddle },
     gameLoop,
-    speed,
-    paddleWidth
+    paddleWidth,
+    paddleHeight
   } = instance;
-  const { y } = ball;
 
   ball.x = leftPaddle.x + paddleWidth;
+  ball.y = leftPaddle.y + paddleHeight / 2;
   instance.ballDir = {
     x: -1,
     y: -1
   };
 
+  const { x, y } = ball;
+
   gameLoop();
 
   expect(instance.ballDir.x).toBe(1);
   expect(instance.ballDir.y).toBe(-1);
-  expect(ball.x).toBe(leftPaddle.x + paddleWidth + speed);
-  expect(ball.y).toBe(y + speed);
+  expect(ball.x).toBe(x + ball.speed);
+  expect(ball.y).toBe(y + ball.speed);
 });
 
 test('ball should bounce back if it collides with right paddle', () => {
+  jest.doMock('./helpers', () => {
+    const module = jest.genMockFromModule('./helpers');
+    let i = 0;
+
+    return {
+      ...module,
+      collisionDetected: jest.fn(() => i++ > 0)
+    };
+  });
+
+  App = importApp();
+
   const wrapper = mount(<App />);
   const instance = wrapper.instance();
-  const { state: { ball, rightPaddle }, gameLoop, speed } = instance;
-  const { y } = ball;
+  const { state: { ball, rightPaddle }, gameLoop } = instance;
+  const { y, speed } = ball;
   const x = rightPaddle.x - ball.width;
+
+  jest.doMock('./helpers', () => ({
+    collisionDetected: a => a.x === rightPaddle.x
+  }));
 
   ball.x = x;
   instance.ballDir = {
     x: 1,
-    y: 1
+    y: 0
   };
 
   gameLoop();
 
   expect(instance.ballDir.x).toBe(-1);
-  expect(instance.ballDir.y).toBe(1);
+  expect(instance.ballDir.y).toBe(0);
   expect(ball.x).toBe(x - speed);
-  expect(ball.y).toBe(y - speed);
+  expect(ball.y).toBe(y);
 });

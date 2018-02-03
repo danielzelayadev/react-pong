@@ -33,6 +33,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -70,6 +71,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -112,6 +114,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -163,6 +166,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -200,6 +204,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -242,6 +247,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
@@ -316,6 +322,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -353,6 +360,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -395,6 +403,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -446,6 +455,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -483,6 +493,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -525,6 +536,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
@@ -599,6 +611,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -636,6 +649,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -678,6 +692,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -729,6 +744,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -766,6 +782,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -808,6 +825,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
@@ -882,6 +900,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -919,6 +938,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -961,6 +981,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -1012,6 +1033,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1049,6 +1071,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -1091,6 +1114,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
@@ -1165,6 +1189,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -1202,6 +1227,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1244,6 +1270,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -1295,6 +1322,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1332,6 +1360,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -1374,6 +1403,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
@@ -1448,6 +1478,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -1485,6 +1516,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1527,6 +1559,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -1578,6 +1611,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1615,6 +1649,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -1657,6 +1692,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
@@ -1731,6 +1767,7 @@ ShallowWrapper {
           color="#fff"
           height={30}
           id="ball"
+          speed={60}
           width={30}
           x={735}
           y={485}
@@ -1768,6 +1805,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1810,6 +1848,7 @@ ShallowWrapper {
             "color": "#fff",
             "height": 30,
             "id": "ball",
+            "speed": 60,
             "width": 30,
             "x": 735,
             "y": 485,
@@ -1861,6 +1900,7 @@ ShallowWrapper {
             color="#fff"
             height={30}
             id="ball"
+            speed={60}
             width={30}
             x={735}
             y={485}
@@ -1898,6 +1938,7 @@ ShallowWrapper {
               color="#fff"
               height={30}
               id="ball"
+              speed={60}
               width={30}
               x={735}
               y={485}
@@ -1940,6 +1981,7 @@ ShallowWrapper {
               "color": "#fff",
               "height": 30,
               "id": "ball",
+              "speed": 60,
               "width": 30,
               "x": 735,
               "y": 485,
