@@ -28,7 +28,7 @@ class App extends Component {
       width: 30,
       height: 30,
       x: 680,
-      y: 280
+      y: 485
     }
   };
   componentDidMount() {
@@ -50,8 +50,12 @@ class App extends Component {
     const { leftPaddle, ball } = this.state;
 
     if (ballDir) {
-      ball.x += speed * ballDir.x;
-      ball.y += speed * ballDir.y;
+      const ySpace =
+        ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);
+
+      ballDir.y *= ySpace ? 1 : -1;
+
+      ball.y -= (speed > ySpace ? ySpace : speed) * ballDir.y;
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
