@@ -14,7 +14,7 @@ const Rect = styled.div.attrs({
   background-color: ${({ color = defaultColor }) => color};
   width: ${({ width = defaultWidth }) => width}px;
   height: ${({ height = defaultHeight }) => height}px;
-  display: inline-block;
+  display: flex;
   transition: transform 150ms ease-in-out;
 `;
 
