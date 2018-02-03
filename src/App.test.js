@@ -14,6 +14,8 @@ const { focusElement, randomUnitVector } = require('./helpers');
 
 const shallowOptions = { disableLifecycleMethods: true };
 
+const gameLoopMs = 75;
+
 test('should render without crashing', () => {
   const wrapper = shallow(<App />, shallowOptions);
   expect(wrapper).toMatchSnapshot();
@@ -94,14 +96,14 @@ test('unknown key downs and ups should be ignored', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('input loop should start on mount to run every 75ms', () => {
+test(`input loop should start on mount to run every ${gameLoopMs}s`, () => {
   const instance = mount(<App />).instance();
 
   instance.gameLoop = jest.fn();
 
   instance.componentDidMount();
 
-  expect(setInterval).toHaveBeenCalledWith(instance.gameLoop, 75);
+  expect(setInterval).toHaveBeenCalledWith(instance.gameLoop, gameLoopMs);
   expect(setInterval).toHaveBeenCalledTimes(2);
   expect(instance.gameLoopId).toBeDefined();
 });
@@ -187,4 +189,27 @@ test('ball should be set an initial direction on mount via randomUnitVector', ()
 
   expect(randomUnitVector).toHaveBeenCalled();
   expect(ballDir).toEqual(expectedBallDir);
+});
+
+test('ball should move in its direction on gameLoop tick', () => {
+  const wrapper = shallow(<App />, shallowOptions);
+  const instance = wrapper.instance();
+  const { ball } = instance.state;
+
+  instance.ballDir = {
+    x: 1,
+    y: 1
+  };
+
+  const expectedBallPos = {
+    x: ball.x * instance.ballDir.x + instance.speed,
+    y: ball.y * instance.ballDir.y + instance.speed
+  };
+
+  instance.gameLoop();
+
+  expect({
+    x: ball.x,
+    y: ball.y
+  }).toEqual(expectedBallPos);
 });

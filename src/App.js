@@ -33,8 +33,8 @@ class App extends Component {
   };
   componentDidMount() {
     focusElement(this.wrapper);
-    this.gameLoopId = setInterval(this.gameLoop, this.loopMs);
     this.ballDir = randomUnitVector();
+    this.gameLoopId = setInterval(this.gameLoop, this.loopMs);
   }
   componentWillUnmount() {
     clearInterval(this.gameLoopId);
@@ -46,8 +46,13 @@ class App extends Component {
     this.controls[keyCode] = false;
   };
   gameLoop = () => {
-    const { controls, speed } = this;
-    const { leftPaddle } = this.state;
+    const { controls, speed, ballDir } = this;
+    const { leftPaddle, ball } = this.state;
+
+    if (ballDir) {
+      ball.x = ball.x * ballDir.x + speed;
+      ball.y = ball.y * ballDir.y + speed;
+    }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
       leftPaddle.y -= speed;
@@ -56,7 +61,8 @@ class App extends Component {
 
     this.setState({
       ...this.state,
-      leftPaddle
+      leftPaddle,
+      ball
     });
   };
   didHitUpperLimit(pos) {
