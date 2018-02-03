@@ -345,3 +345,49 @@ test('ball should relaunch 2s after its position is reset', () => {
     expect(instance.ballDir).toEqual(expectedBallDir);
   });
 });
+
+test('ball should bounce back if it collides with left paddle', () => {
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const {
+    state: { ball, leftPaddle },
+    gameLoop,
+    speed,
+    paddleWidth
+  } = instance;
+  const { y } = ball;
+
+  ball.x = leftPaddle.x + paddleWidth;
+  instance.ballDir = {
+    x: -1,
+    y: -1
+  };
+
+  gameLoop();
+
+  expect(instance.ballDir.x).toBe(1);
+  expect(instance.ballDir.y).toBe(-1);
+  expect(ball.x).toBe(leftPaddle.x + paddleWidth + speed);
+  expect(ball.y).toBe(y + speed);
+});
+
+test('ball should bounce back if it collides with right paddle', () => {
+  const wrapper = mount(<App />);
+  const instance = wrapper.instance();
+  const { state: { ball, rightPaddle }, gameLoop, speed } = instance;
+  const { y } = ball;
+  const x = rightPaddle.x - ball.width;
+
+  ball.x = x;
+  instance.ballDir = {
+    x: 1,
+    y: 1
+  };
+
+  gameLoop();
+
+  expect(instance.ballDir.x).toBe(-1);
+  expect(instance.ballDir.y).toBe(1);
+  expect(ball.x).toBe(x - speed);
+  expect(ball.y).toBe(y - speed);
+});

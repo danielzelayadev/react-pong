@@ -46,11 +46,17 @@ class App extends Component {
     this.controls[keyCode] = false;
   };
   gameLoop = () => {
-    const { controls, speed, ballDir } = this;
-    const { leftPaddle, ball } = this.state;
+    const { controls, speed, ballDir, paddleWidth } = this;
+    const { leftPaddle, rightPaddle, ball } = this.state;
 
     if (ballDir) {
-      if (this.ballOutOfBounds(ball.x, ball.width)) {
+      if (ball.x === leftPaddle.x + paddleWidth) {
+        ballDir.x = 1;
+        this.moveBall();
+      } else if (ball.x + ball.width === rightPaddle.x) {
+        ballDir.x = -1;
+        this.moveBall();
+      } else if (this.ballOutOfBounds(ball.x, ball.width)) {
         ball.x = this.ballStartX;
         ball.y = this.ballStartY;
         this.ballDir = {
@@ -60,16 +66,7 @@ class App extends Component {
         setTimeout(() => {
           this.ballDir = randomUnitVector();
         }, 2000);
-      } else {
-        const ySpace =
-          ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);
-
-        ballDir.y *= ySpace ? 1 : -1;
-
-        ball.y -= (speed > ySpace ? ySpace : speed) * ballDir.y;
-
-        ball.x += speed * ballDir.x;
-      }
+      } else this.moveBall();
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
@@ -82,6 +79,19 @@ class App extends Component {
       leftPaddle,
       ball
     });
+  };
+  moveBall = () => {
+    const { ballDir, speed } = this;
+    const { ball } = this.state;
+
+    const ySpace =
+      ballDir.y === 1 ? ball.y : this.stageHeight - (ball.y + ball.height);
+
+    ballDir.y *= ySpace ? 1 : -1;
+
+    ball.y -= (speed > ySpace ? ySpace : speed) * ballDir.y;
+
+    ball.x += speed * ballDir.x;
   };
   ballOutOfBounds(x, w) {
     return x < 0 || x + w > this.stageWidth;
