@@ -197,7 +197,7 @@ test('ball should move in its direction on gameLoop tick', () => {
   const { ball } = instance.state;
 
   instance.ballDir = {
-    x: 0,
+    x: 1,
     y: 1
   };
 

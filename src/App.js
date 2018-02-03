@@ -56,6 +56,8 @@ class App extends Component {
       ballDir.y *= ySpace ? 1 : -1;
 
       ball.y -= (speed > ySpace ? ySpace : speed) * ballDir.y;
+
+      ball.x -= speed * ballDir.x;
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
