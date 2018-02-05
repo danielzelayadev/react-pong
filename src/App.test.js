@@ -451,16 +451,10 @@ test('ball should bounce back if it collides with right paddle', () => {
 
 describe('CPU', () => {
   describe('ball moving towards it', () => {
-    beforeEach(() => {
-      jest.unmock('./helpers');
-      App = importApp();
-    });
-
     test('should go down if ball is below', () => {
-      const instance = mount(<App />).instance();
+      const instance = shallow(<App />, shallowOptions).instance();
       const {
         state: { rightPaddle, ball },
-        ballDir,
         gameLoop,
         speed,
         paddleHeight
@@ -470,7 +464,10 @@ describe('CPU', () => {
 
       rightPaddle.y = initCPUY;
 
-      ballDir.x = 1;
+      instance.ballDir = {
+        x: 1,
+        y: 0
+      };
       ball.y = rightPaddle.y + paddleHeight + 10;
 
       gameLoop();
@@ -480,19 +477,17 @@ describe('CPU', () => {
     });
 
     test('should go up if ball is above', () => {
-      const instance = mount(<App />).instance();
-      const {
-        state: { rightPaddle, ball },
-        ballDir,
-        gameLoop,
-        speed
-      } = instance;
+      const instance = shallow(<App />, shallowOptions).instance();
+      const { state: { rightPaddle, ball }, gameLoop, speed } = instance;
 
       const initCPUY = 90;
 
       rightPaddle.y = initCPUY;
 
-      ballDir.x = 1;
+      instance.ballDir = {
+        x: 1,
+        y: 0
+      };
       ball.y = 5;
 
       gameLoop();
@@ -500,5 +495,22 @@ describe('CPU', () => {
       expect(rightPaddle.y).toBe(initCPUY - speed);
       expect(rightPaddle.dir).toBe(1);
     });
+
+    // test('should stay put if ball is in vertical range', () => {
+    //   const instance = mount(<App />).instance();
+    //   const { state: { rightPaddle, ball }, ballDir, gameLoop } = instance;
+
+    //   const initCPUY = 50;
+
+    //   rightPaddle.y = initCPUY;
+
+    //   ballDir.x = 1;
+    //   ball.y = 55;
+
+    //   gameLoop();
+
+    //   expect(rightPaddle.y).toBe(initCPUY);
+    //   expect(rightPaddle.dir).toBe(0);
+    // });
   });
 });
