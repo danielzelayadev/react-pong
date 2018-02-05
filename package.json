@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server",
     "flow": "flow",
     "flow-typed": "flow-typed install",
-    "start": "node server.js",
+    "start": "npm i && node server.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:update": "jest -u",
