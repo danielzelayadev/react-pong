@@ -1,7 +1,7 @@
 {
   "name": "react-pong",
   "version": "1.0.0",
-  "main": "build/index.js",
+  "main": "server.js",
   "author": "Daniel Zelaya <wupaz9@gmail.com> (https://github.com/danielzy95)",
   "license": "MIT",
   "scripts": {
@@ -20,6 +20,7 @@
     "timers": "fake"
   },
   "dependencies": {
+    "express": "4.16.2",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-hot-loader": "3.1.3",
