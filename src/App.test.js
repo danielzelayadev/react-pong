@@ -496,21 +496,25 @@ describe('CPU', () => {
       expect(rightPaddle.dir).toBe(1);
     });
 
-    // test('should stay put if ball is in vertical range', () => {
-    //   const instance = mount(<App />).instance();
-    //   const { state: { rightPaddle, ball }, ballDir, gameLoop } = instance;
+    test('should stay put if ball is in vertical range', () => {
+      const instance = shallow(<App />, shallowOptions).instance();
+      const { state: { rightPaddle, ball }, gameLoop } = instance;
 
-    //   const initCPUY = 50;
+      const initCPUY = 50;
 
-    //   rightPaddle.y = initCPUY;
+      rightPaddle.y = initCPUY;
+      rightPaddle.dir = 1;
 
-    //   ballDir.x = 1;
-    //   ball.y = 55;
+      instance.ballDir = {
+        x: 1,
+        y: 0
+      };
+      ball.y = 55;
 
-    //   gameLoop();
+      gameLoop();
 
-    //   expect(rightPaddle.y).toBe(initCPUY);
-    //   expect(rightPaddle.dir).toBe(0);
-    // });
+      expect(rightPaddle.y).toBe(initCPUY);
+      expect(rightPaddle.dir).toBe(0);
+    });
   });
 });

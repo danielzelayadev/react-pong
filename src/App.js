@@ -103,6 +103,7 @@ class App extends Component {
       if (ballDir.x === 1) {
         if (ball.y > rightPaddle.y + this.paddleHeight) rightPaddle.dir = -1;
         else if (ball.y + ball.width < rightPaddle.y) rightPaddle.dir = 1;
+        else rightPaddle.dir = 0;
       }
     }
 
