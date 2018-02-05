@@ -100,7 +100,10 @@ class App extends Component {
         this.moveBall();
       }
 
-      if (ballDir.x === 1 && ballDir.y === 1) rightPaddle.dir = 1;
+      if (ballDir.x === 1) {
+        if (ball.y > rightPaddle.y + this.paddleHeight) rightPaddle.dir = -1;
+        else if (ball.y + ball.width < rightPaddle.y) rightPaddle.dir = 1;
+      }
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
@@ -108,7 +111,8 @@ class App extends Component {
     if (controls['83'] && !this.didHitLowerLimit(leftPaddle.y))
       leftPaddle.y += speed;
 
-    if (rightPaddle.dir === 1) rightPaddle.y -= speed;
+    if (rightPaddle.dir === -1) rightPaddle.y += speed;
+    else if (rightPaddle.dir === 1) rightPaddle.y -= speed;
 
     this.setState({
       ...this.state,

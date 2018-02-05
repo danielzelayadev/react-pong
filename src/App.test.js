@@ -449,46 +449,56 @@ test('ball should bounce back if it collides with right paddle', () => {
   expect(ball.y).toBe(y);
 });
 
-test('rightPaddle should move up if the ball dir is (i,k)', () => {
-  jest.unmock('./helpers');
+describe('CPU', () => {
+  describe('ball moving towards it', () => {
+    beforeEach(() => {
+      jest.unmock('./helpers');
+      App = importApp();
+    });
 
-  App = importApp();
+    test('should go down if ball is below', () => {
+      const instance = mount(<App />).instance();
+      const {
+        state: { rightPaddle, ball },
+        ballDir,
+        gameLoop,
+        speed,
+        paddleHeight
+      } = instance;
 
-  const wrapper = mount(<App />);
-  const instance = wrapper.instance();
-  const { ballDir, gameLoop, speed } = instance;
-  const { rightPaddle } = instance.state;
-  const { y } = rightPaddle;
+      const initCPUY = 5;
 
-  ballDir.x = 1;
-  ballDir.y = 1;
+      rightPaddle.y = initCPUY;
 
-  gameLoop();
+      ballDir.x = 1;
+      ball.y = rightPaddle.y + paddleHeight + 10;
 
-  expect(rightPaddle.dir).toBe(ballDir.y);
-  expect(rightPaddle.y).toBe(y - speed);
+      gameLoop();
+
+      expect(rightPaddle.y).toBe(initCPUY + speed);
+      expect(rightPaddle.dir).toBe(-1);
+    });
+
+    test('should go up if ball is above', () => {
+      const instance = mount(<App />).instance();
+      const {
+        state: { rightPaddle, ball },
+        ballDir,
+        gameLoop,
+        speed
+      } = instance;
+
+      const initCPUY = 90;
+
+      rightPaddle.y = initCPUY;
+
+      ballDir.x = 1;
+      ball.y = 5;
+
+      gameLoop();
+
+      expect(rightPaddle.y).toBe(initCPUY - speed);
+      expect(rightPaddle.dir).toBe(1);
+    });
+  });
 });
-
-test('rightPaddle should move stay put if the ball dir is (-i,)', () => {
-  jest.unmock('./helpers');
-
-  App = importApp();
-
-  const wrapper = mount(<App />);
-  const instance = wrapper.instance();
-  const { ballDir, gameLoop } = instance;
-  const { rightPaddle } = instance.state;
-  const { dir, y } = rightPaddle;
-
-  ballDir.x = -1;
-  ballDir.y = 1;
-
-  gameLoop();
-
-  expect(rightPaddle.dir).toBe(dir);
-  expect(rightPaddle.y).toBe(y);
-});
-
-test('rightPaddle should move up if the ball dir si (i,-k)', () => {});
-
-test('stage should reset on goal', () => {});
