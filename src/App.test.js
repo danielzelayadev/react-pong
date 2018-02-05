@@ -517,4 +517,80 @@ describe('CPU', () => {
       expect(rightPaddle.dir).toBe(0);
     });
   });
+
+  describe('ball moving away', () => {
+    test('should move to center if above', () => {
+      jest.doMock('./helpers', () => ({
+        collisionDetected: jest.fn(() => false)
+      }));
+
+      App = importApp();
+
+      const instance = shallow(<App />, shallowOptions).instance();
+      const {
+        state: { rightPaddle },
+        gameLoop,
+        speed,
+        paddleStartY
+      } = instance;
+
+      const initCPUY = paddleStartY - speed;
+
+      rightPaddle.y = initCPUY;
+
+      instance.ballDir = {
+        x: -1,
+        y: 0
+      };
+
+      gameLoop();
+
+      expect(rightPaddle.y).toBe(paddleStartY);
+      expect(rightPaddle.dir).toBe(-1);
+    });
+
+    test('should move to center if below', () => {
+      const instance = shallow(<App />, shallowOptions).instance();
+      const {
+        state: { rightPaddle },
+        gameLoop,
+        speed,
+        paddleStartY
+      } = instance;
+
+      const initCPUY = paddleStartY + speed;
+
+      rightPaddle.y = initCPUY;
+
+      instance.ballDir = {
+        x: -1,
+        y: 0
+      };
+
+      gameLoop();
+
+      expect(rightPaddle.y).toBe(paddleStartY);
+      expect(rightPaddle.dir).toBe(1);
+    });
+
+    test('should stay put if already on the center', () => {
+      const instance = shallow(<App />, shallowOptions).instance();
+      const { state: { rightPaddle }, gameLoop, paddleStartY } = instance;
+
+      const initCPUY = paddleStartY;
+
+      rightPaddle.y = initCPUY;
+      rightPaddle.dir = 1;
+
+      instance.ballDir = {
+        x: -1,
+        y: 0
+      };
+
+      gameLoop();
+
+      expect(rightPaddle.y).toBe(paddleStartY);
+      expect(rightPaddle.dir).toBe(0);
+    });
+  });
 });

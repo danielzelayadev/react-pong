@@ -48,7 +48,14 @@ class App extends Component {
     this.controls[keyCode] = false;
   };
   gameLoop = () => {
-    const { controls, speed, ballDir, paddleWidth, paddleHeight } = this;
+    const {
+      controls,
+      speed,
+      ballDir,
+      paddleWidth,
+      paddleHeight,
+      paddleStartY
+    } = this;
     const { leftPaddle, rightPaddle, ball } = this.state;
 
     if (ballDir) {
@@ -101,10 +108,12 @@ class App extends Component {
       }
 
       if (ballDir.x === 1) {
-        if (ball.y > rightPaddle.y + this.paddleHeight) rightPaddle.dir = -1;
+        if (ball.y > rightPaddle.y + paddleHeight) rightPaddle.dir = -1;
         else if (ball.y + ball.width < rightPaddle.y) rightPaddle.dir = 1;
         else rightPaddle.dir = 0;
-      }
+      } else if (rightPaddle.y < paddleStartY) rightPaddle.dir = -1;
+      else if (rightPaddle.y > paddleStartY) rightPaddle.dir = 1;
+      else rightPaddle.dir = 0;
     }
 
     if (controls['87'] && !this.didHitUpperLimit(leftPaddle.y))
@@ -157,6 +166,7 @@ class App extends Component {
   loopMs = 75;
   ballStartX = 735;
   ballStartY = 485;
+  paddleStartY = 375;
   render() {
     const { leftPaddle, rightPaddle, ball } = this.state;
 
