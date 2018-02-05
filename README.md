@@ -6,7 +6,7 @@ A simple Pong game made with React.js and TDD.
 
 * [x] ~Player Controls~ 🎮
 * [x] ~Ball Movement~ 🖲
-* [X] CPU 👾
+* [X] ~CPU~ 👾
 * [ ] Resume/Pause Controls for Single Player ⏯
 * [ ] Multiplayer Mode 👫👭👬
 * [ ] Stage, Paddle, and Ball Styling 💅🏻
