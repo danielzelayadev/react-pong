@@ -4,3 +4,4 @@ coverage
 .DS_STORE
 yarn-debug.log*
 yarn-error.log*
+RDD.md
