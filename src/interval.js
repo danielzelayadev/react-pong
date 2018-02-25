@@ -1,19 +1,19 @@
-export default function interval(childInterval) {
-  if (
-    typeof childInterval !== 'object' ||
-    typeof childInterval.run !== 'function' ||
-    typeof childInterval.ms !== 'number'
-  )
-    throw new Error(
-      'Must provided an object with a `run` callback and `ms` number'
-    );
-  if (childInterval.ms < 0) throw new Error('ms must be a positive number');
+export default function interval(Ticker) {
+  if (typeof Ticker !== 'function')
+    throw new Error('Must provide a function prototype or class');
 
   return function DecoratedInterval() {
+    const ticker = new Ticker();
     let id;
 
+    if (typeof ticker.run !== 'function' || typeof ticker.ms !== 'number')
+      throw new Error(
+        'Must provide a function prototype/class with a `run` callback and `ms` number'
+      );
+    if (ticker.ms < 0) throw new Error('ms must be a positive number');
+
     this.start = () => {
-      id = setInterval(childInterval.run, childInterval.ms);
+      if (!id) id = setInterval(ticker.run, ticker.ms);
     };
 
     this.end = () => {
