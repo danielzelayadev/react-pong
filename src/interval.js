@@ -1,10 +1,12 @@
-export default function interval(Ticker) {
+// @flow
+
+export default function interval(Ticker: Function): Function {
   if (typeof Ticker !== 'function')
     throw new Error('Must provide a function prototype or class');
 
-  return function DecoratedInterval() {
-    const ticker = new Ticker();
-    let id;
+  return function DecoratedInterval(...args: any[]) {
+    const ticker: { run: Function, ms: number } = new Ticker(...args);
+    let id: ?IntervalID;
 
     if (typeof ticker.run !== 'function' || typeof ticker.ms !== 'number')
       throw new Error(
