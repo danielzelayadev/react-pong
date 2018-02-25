@@ -4,15 +4,13 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-test('should return a decorated interval', () => {
+test('should return a decorated interval class', () => {
   const actual = interval({
     run: jest.fn(),
     ms: 100
   });
 
-  expect(actual).toBeDefined();
-  expect(typeof actual.start).toBe('function');
-  expect(typeof actual.end).toBe('function');
+  expect(typeof actual).toBe('function');
 });
 
 test('should throw error if no object with a run function and ms prop is provided', () => {
@@ -41,46 +39,61 @@ test('should throw error if ms is a negative number', () => {
   );
 });
 
-describe('start', () => {
-  test("should call setInterval exactly 1 time with the provided child interval's ms and run callback", () => {
-    const childInterval = {
-      ms: 300,
-      run: jest.fn()
-    };
-    const decoratedInterval = interval(childInterval);
+describe('decorated interval class', () => {
+  test('should have a start and end function', () => {
+    const DecoratedInterval = interval({
+      run: jest.fn(),
+      ms: 100
+    });
+    const instance = new DecoratedInterval();
 
-    decoratedInterval.start();
-
-    expect(setInterval).toHaveBeenCalledTimes(1);
-    expect(setInterval).toHaveBeenCalledWith(
-      childInterval.run,
-      childInterval.ms
-    );
+    expect(typeof instance.start).toBe('function');
+    expect(typeof instance.end).toBe('function');
   });
-});
+  describe('start', () => {
+    test("should call setInterval exactly 1 time with the provided child interval's ms and run callback", () => {
+      const childInterval = {
+        ms: 300,
+        run: jest.fn()
+      };
+      const DecoratedInterval = interval(childInterval);
+      const instance = new DecoratedInterval();
 
-describe('end', () => {
-  test('should call clearInterval if start has been called', () => {
-    const childInterval = {
-      ms: 300,
-      run: jest.fn()
-    };
-    const decoratedInterval = interval(childInterval);
+      instance.start();
 
-    decoratedInterval.start();
-    decoratedInterval.end();
-
-    expect(clearInterval).toHaveBeenCalled();
+      expect(setInterval).toHaveBeenCalledTimes(1);
+      expect(setInterval).toHaveBeenCalledWith(
+        childInterval.run,
+        childInterval.ms
+      );
+    });
   });
-  test('should NOT call clearInterval if start has been NOT called', () => {
-    const childInterval = {
-      ms: 300,
-      run: jest.fn()
-    };
-    const decoratedInterval = interval(childInterval);
 
-    decoratedInterval.end();
+  describe('end', () => {
+    test('should call clearInterval if start has been called', () => {
+      const childInterval = {
+        ms: 300,
+        run: jest.fn()
+      };
+      const DecoratedInterval = interval(childInterval);
+      const instance = new DecoratedInterval();
 
-    expect(clearInterval).not.toHaveBeenCalled();
+      instance.start();
+      instance.end();
+
+      expect(clearInterval).toHaveBeenCalled();
+    });
+    test('should NOT call clearInterval if start has been NOT called', () => {
+      const childInterval = {
+        ms: 300,
+        run: jest.fn()
+      };
+      const DecoratedInterval = interval(childInterval);
+      const instance = new DecoratedInterval();
+
+      instance.end();
+
+      expect(clearInterval).not.toHaveBeenCalled();
+    });
   });
 });

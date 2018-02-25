@@ -8,17 +8,19 @@ export default function interval(childInterval) {
       'Must provided an object with a `run` callback and `ms` number'
     );
   if (childInterval.ms < 0) throw new Error('ms must be a positive number');
-  let id;
 
-  return {
-    start: () => {
+  return function DecoratedInterval() {
+    let id;
+
+    this.start = () => {
       id = setInterval(childInterval.run, childInterval.ms);
-    },
-    end: () => {
+    };
+
+    this.end = () => {
       if (id) {
         clearInterval(id);
         id = undefined;
       }
-    }
+    };
   };
 }
