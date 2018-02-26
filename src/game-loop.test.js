@@ -37,3 +37,75 @@ describe('runGameObjectScript', () => {
     expect(script).toHaveBeenCalledTimes(2);
   });
 });
+
+describe('run', () => {
+  test('should run the scripts of every object', () => {
+    const script = jest.fn();
+    const gameObjects = [
+      {
+        name: 'one',
+        components: []
+      },
+      {
+        name: 'two',
+        components: [
+          {
+            type: 'script',
+            action: script
+          }
+        ]
+      },
+      {
+        name: 'three',
+        components: []
+      },
+      {
+        name: 'four',
+        components: [
+          {
+            type: 'transform'
+          }
+        ]
+      },
+      {
+        name: 'five',
+        components: [
+          {
+            type: 'script',
+            action: script
+          },
+          {
+            type: 'script',
+            action: script
+          }
+        ]
+      },
+      {
+        name: 'six',
+        components: [
+          {
+            type: 'transform'
+          }
+        ]
+      },
+      {
+        name: 'seven',
+        components: [
+          {
+            type: 'script',
+            action: script
+          }
+        ]
+      }
+    ];
+    const gameLoop = new GameLoopTicker(gameObjects);
+
+    gameLoop.runGameObjectScript = jest.fn();
+
+    gameLoop.run();
+
+    expect(gameLoop.runGameObjectScript).toHaveBeenCalledTimes(
+      gameObjects.length
+    );
+  });
+});
