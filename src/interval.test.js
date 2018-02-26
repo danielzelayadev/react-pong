@@ -19,14 +19,16 @@ test('should throw error if "Ticker" param is not a function', () => {
 });
 
 describe('decorated interval class', () => {
-  test('should instantiate the "ticker" class', () => {
+  test('should instantiate the "ticker" class and pass the extra args to the ticker instance', () => {
     const Ticker = jest.fn(function t() {
       this.run = jest.fn();
     });
     const DecoratedTicker = interval(Ticker);
-    (() => new DecoratedTicker(100))();
+    const extraArgs = [10, 'yes', { id: 10 }];
+    (() => new DecoratedTicker(100, ...extraArgs))();
 
     expect(Ticker).toHaveBeenCalledTimes(1);
+    expect(Ticker).toHaveBeenCalledWith(...extraArgs);
   });
   test('should throw error if the "ticker" class instance has no run function', () => {
     const testCases = [

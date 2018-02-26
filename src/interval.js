@@ -4,8 +4,8 @@ export default function interval(Ticker: Function): Function {
   if (typeof Ticker !== 'function')
     throw new Error('Must provide a function prototype or class');
 
-  return function DecoratedInterval(ms: number) {
-    const ticker: { run: Function } = new Ticker();
+  return function DecoratedInterval(ms: number, ...tickerArgs: any[]) {
+    const ticker: { run: Function } = new Ticker(...tickerArgs);
     let id: ?IntervalID;
 
     if (typeof ticker.run !== 'function')
