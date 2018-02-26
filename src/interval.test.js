@@ -80,10 +80,14 @@ describe('decorated interval class', () => {
   });
   describe('start', () => {
     test("should call setInterval exactly 1 time with the provided ms and the child interval's run callback", () => {
-      const run = jest.fn();
+      const expectedCb = jest.fn();
+      const bind = jest.fn(() => expectedCb);
+      let expectedContext;
       const ms = 100;
       const Ticker = function Ticker() {
-        this.run = run;
+        this.run = () => {};
+        this.run.bind = bind;
+        expectedContext = this;
       };
       const DecoratedInterval = interval(Ticker);
       const instance = new DecoratedInterval(ms);
@@ -91,7 +95,8 @@ describe('decorated interval class', () => {
       instance.start();
 
       expect(setInterval).toHaveBeenCalledTimes(1);
-      expect(setInterval).toHaveBeenCalledWith(run, ms);
+      expect(bind).toHaveBeenCalledWith(expectedContext);
+      expect(setInterval).toHaveBeenCalledWith(expectedCb, ms);
     });
     test('should not call setInterval if already started', () => {
       const Ticker = function Ticker() {

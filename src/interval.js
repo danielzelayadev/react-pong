@@ -24,7 +24,7 @@ export default function interval(Ticker: Function): Function {
 
     this.start = () => {
       if (!id) {
-        id = setInterval(ticker.run, ms);
+        id = setInterval(ticker.run.bind(ticker), ms);
         if (typeof ticker.init === 'function') ticker.init();
       }
     };
