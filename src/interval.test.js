@@ -151,5 +151,20 @@ describe('decorated interval class', () => {
       expect(clearInterval).toHaveBeenCalledTimes(1);
       expect(clearInterval).toHaveBeenCalledWith(intervalId);
     });
+    test("if started, should run the ticker's end method if it has one", () => {
+      const end = jest.fn();
+      const Ticker = jest.fn(function t() {
+        this.run = jest.fn();
+        this.end = end;
+      });
+      const DecoratedTicker = interval(Ticker);
+      const extraArgs = [10, 'yes', { id: 10 }];
+      const instance = new DecoratedTicker(100, ...extraArgs);
+
+      instance.start();
+      instance.end();
+
+      expect(end).toHaveBeenCalledTimes(1);
+    });
   });
 });

@@ -5,9 +5,11 @@ export default function interval(Ticker: Function): Function {
     throw new Error('Must provide a function prototype or class');
 
   return function DecoratedInterval(ms: number, ...tickerArgs: any[]) {
-    const ticker: { run: Function, init: ?Function } = new Ticker(
-      ...tickerArgs
-    );
+    const ticker: {
+      run: Function,
+      init: ?Function,
+      end: ?Function
+    } = new Ticker(...tickerArgs);
     let id: ?IntervalID;
 
     if (typeof ticker.run !== 'function')
@@ -31,6 +33,7 @@ export default function interval(Ticker: Function): Function {
       if (id) {
         clearInterval(id);
         id = undefined;
+        if (typeof ticker.end === 'function') ticker.end();
       }
     };
   };
