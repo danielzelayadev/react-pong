@@ -108,6 +108,20 @@ describe('decorated interval class', () => {
 
       expect(setInterval).toHaveBeenCalledTimes(2);
     });
+    test("if not started, should run the ticker's init method if it has one", () => {
+      const init = jest.fn();
+      const Ticker = jest.fn(function t() {
+        this.run = jest.fn();
+        this.init = init;
+      });
+      const DecoratedTicker = interval(Ticker);
+      const extraArgs = [10, 'yes', { id: 10 }];
+      const instance = new DecoratedTicker(100, ...extraArgs);
+
+      instance.start();
+
+      expect(init).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('end', () => {
