@@ -7,7 +7,6 @@ beforeEach(() => {
 test('given a "ticker" class, should return a decorated interval class', () => {
   const actual = interval(function Ticker() {
     this.run = jest.fn();
-    this.ms = 100;
   });
 
   expect(typeof actual).toBe('function');
@@ -23,64 +22,69 @@ describe('decorated interval class', () => {
   test('should instantiate the "ticker" class', () => {
     const Ticker = jest.fn(function t() {
       this.run = jest.fn();
-      this.ms = 100;
     });
     const DecoratedTicker = interval(Ticker);
-    (() => new DecoratedTicker())();
+    (() => new DecoratedTicker(100))();
 
     expect(Ticker).toHaveBeenCalledTimes(1);
   });
-  test('should throw error if the "ticker" class instance has no run function or ms prop', () => {
+  test('should throw error if the "ticker" class instance has no run function', () => {
     const testCases = [
       () => {},
       function t() {
         this.run = 10;
-        this.ms = '3';
       },
       function t() {
-        this.run = jest.fn();
-      },
-      function t() {
-        this.ms = 100;
+        this.x = 100;
       }
     ];
     testCases.forEach(testCase => {
       const DecoratedTicker = interval(testCase);
-      expect(() => new DecoratedTicker()).toThrowError(
-        'Must provide a function prototype/class with a `run` callback and `ms` number'
+      expect(() => new DecoratedTicker(100)).toThrowError(
+        'Must provide a function prototype/class with a `run` callback'
+      );
+    });
+  });
+  test('should throw error if ms is not a number type', () => {
+    const Ticker = function Ticker() {
+      this.run = jest.fn();
+    };
+    const DecoratedInterval = interval(Ticker);
+    const testCases = [{}, undefined, 'yes', [], f => f];
+
+    testCases.forEach(testCase => {
+      expect(() => new DecoratedInterval(testCase)).toThrowError(
+        `First argument "ms" must be a number. Got: ${testCase} of type ${typeof testCase}`
       );
     });
   });
   test('should throw error if ms is a negative number', () => {
     const Ticker = function Ticker() {
       this.run = jest.fn();
-      this.ms = -100;
     };
     const DecoratedInterval = interval(Ticker);
-    expect(() => new DecoratedInterval()).toThrowError(
+    expect(() => new DecoratedInterval(-100)).toThrowError(
       'ms must be a positive number'
     );
   });
   test('should have a start and end function', () => {
     const DecoratedInterval = interval(function Ticker() {
       this.run = jest.fn();
-      this.ms = 100;
     });
-    const instance = new DecoratedInterval();
+    const instance = new DecoratedInterval(100);
 
     expect(typeof instance.start).toBe('function');
     expect(typeof instance.end).toBe('function');
   });
   describe('start', () => {
-    test("should call setInterval exactly 1 time with the provided child interval's ms and run callback", () => {
+    test("should call setInterval exactly 1 time with the provided ms and the child interval's run callback", () => {
       const run = jest.fn();
       const ms = 100;
       const Ticker = function Ticker() {
         this.run = run;
-        this.ms = ms;
       };
       const DecoratedInterval = interval(Ticker);
-      const instance = new DecoratedInterval();
+      const instance = new DecoratedInterval(ms);
 
       instance.start();
 
@@ -90,10 +94,9 @@ describe('decorated interval class', () => {
     test('should not call setInterval if already started', () => {
       const Ticker = function Ticker() {
         this.run = jest.fn();
-        this.ms = 100;
       };
       const DecoratedInterval = interval(Ticker);
-      const instance = new DecoratedInterval();
+      const instance = new DecoratedInterval(100);
 
       instance.start();
       instance.start();
@@ -111,10 +114,9 @@ describe('decorated interval class', () => {
       const oldSetInterval = setInterval;
       const Ticker = function Ticker() {
         this.run = jest.fn();
-        this.ms = 100;
       };
       const DecoratedInterval = interval(Ticker);
-      const instance = new DecoratedInterval();
+      const instance = new DecoratedInterval(100);
 
       window.setInterval = jest.fn(() => intervalId);
 

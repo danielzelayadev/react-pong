@@ -4,18 +4,22 @@ export default function interval(Ticker: Function): Function {
   if (typeof Ticker !== 'function')
     throw new Error('Must provide a function prototype or class');
 
-  return function DecoratedInterval(...args: any[]) {
-    const ticker: { run: Function, ms: number } = new Ticker(...args);
+  return function DecoratedInterval(ms: number) {
+    const ticker: { run: Function } = new Ticker();
     let id: ?IntervalID;
 
-    if (typeof ticker.run !== 'function' || typeof ticker.ms !== 'number')
+    if (typeof ticker.run !== 'function')
       throw new Error(
-        'Must provide a function prototype/class with a `run` callback and `ms` number'
+        'Must provide a function prototype/class with a `run` callback'
       );
-    if (ticker.ms < 0) throw new Error('ms must be a positive number');
+    if (typeof ms !== 'number')
+      throw new Error(
+        `First argument "ms" must be a number. Got: ${ms} of type ${typeof ms}`
+      );
+    if (ms < 0) throw new Error('ms must be a positive number');
 
     this.start = () => {
-      if (!id) id = setInterval(ticker.run, ticker.ms);
+      if (!id) id = setInterval(ticker.run, ms);
     };
 
     this.end = () => {
